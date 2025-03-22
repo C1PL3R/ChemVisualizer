@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Molecule Viewer</title>
+    <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        #viewer {
+            width: 600px;
+            height: 400px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>3D Molecule Viewer</h1>
+    <br>
+    <div id="viewer"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var molBlock = `{{ mol_block|escapejs }}`;
+
+            if (molBlock.trim()) {
+                var viewer = $3Dmol.createViewer("viewer", { backgroundColor: "white" });
+                viewer.addModel(molBlock, "sdf");
+                viewer.setStyle({}, { stick: {} });
+
+                // Додаємо підписи атомів
+                var atoms = viewer.getModel().selectedAtoms({});
+                atoms.forEach(atom => {
+                    console.log(atom.elem)
+                    viewer.addLabel(atom.elem, {
+                        position: { x: atom.x, y: atom.y + 0.3, z: atom.z },
+                        fontSize: 18,
+                        fontColor: "black",
+                        backgroundColor: "white",  // Для перевірки можна поставити колір
+                        backgroundOpacity: 0.0      // Повна прозорість фону
+                    });
+                });
+
+                viewer.zoomTo();
+                viewer.render();
+            } else {
+                console.error("MolBlock порожній або не був переданий.");
+            }
+        });
+    </script>
+</body>
+
+</html>

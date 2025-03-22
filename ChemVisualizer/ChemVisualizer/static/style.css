@@ -1,0 +1,18 @@
+#viewer {
+    width: 1300px;
+    height: 600px;
+    position: relative;
+}
+
+h1 {
+    color: aqua;
+}
+
+#moleculeLink {
+    display: none;
+}
+
+body {
+    background-color: rgb(111, 111, 111);
+}
+
