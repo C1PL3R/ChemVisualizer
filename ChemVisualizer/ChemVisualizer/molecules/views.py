@@ -7,13 +7,35 @@ from django.views.decorators.csrf import csrf_exempt
 import json            
 import pubchempy as pcp
 
-# Create your views here.
+viewer_size = {'width': 1000, 'height': 600}  # Значення за замовчуванням
+
+@csrf_exempt
+def set_viewer_size(request):
+    global viewer_size
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        viewer_size['width'] = int(data.get('width', 1000))
+        viewer_size['height'] = int(data.get('height', 600))
+    return JsonResponse({'status': 'success'})
+
+
 def index(request):
     return render(request, 'index.html')
 
+def about(request):
+    return render(request, 'about.html')
 
-def molecule_view(request, smiles):
-    # Конвертуємо SMILES в молекулу
+def what_are_smiles(request):
+    return render(request, 'what_are_smiles.html')
+
+
+def molecule_view(request, name, smiles):
+    global viewer_size
+    width = viewer_size["width"]
+    height = viewer_size["height"]
+    
+    print(width, height)
+    
     mol = Chem.MolFromSmiles(smiles)
     mol = Chem.AddHs(mol)
 
@@ -22,27 +44,18 @@ def molecule_view(request, smiles):
     block = Chem.MolToMolBlock(mol)
 
     # Візуалізація молекули
-    viewer = py3Dmol.view(width=1000, height=600)
+    viewer = py3Dmol.view(width=width, height=height)
     viewer.addModel(block, "mol")
 
     # Стиль молекули
     viewer.setStyle({'stick': {}})  # Відображаємо молекулу як стіки
-
-    # Додаємо підписи атомів
-    for atom in mol.GetAtoms():
-        pos = mol.GetConformer().GetAtomPosition(atom.GetIdx())
-        viewer.addLabel(atom.GetSymbol(), {
-            "position": {'x': pos.x, 'y': pos.y, 'z': pos.z},
-            "fontSize": 12,
-            "fontColor": "black"
-        })
 
     # Фоновий колір і зум
     viewer.setBackgroundColor('white')
     viewer.zoomTo()
     viewer.render()
 
-    return render(request, 'molecule_view.html', {'mol_block': block, 'viewer': viewer})
+    return render(request, 'molecule_view.html', {'mol_block': block, 'viewer': viewer, 'name': name})
 
 
 @csrf_exempt

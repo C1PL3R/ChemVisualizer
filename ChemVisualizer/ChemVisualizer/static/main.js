@@ -17,7 +17,7 @@ function sendMoleculeRequest(smiles) {
         console.log(data.smiles);
         var link = document.getElementById("moleculeLink");
 
-        link.href = `view_molecule/${data.smiles}`;
+        link.href = `view_molecule/${data.name}/${data.smiles}`;
         link.style.display = "flex";
 
       } else {

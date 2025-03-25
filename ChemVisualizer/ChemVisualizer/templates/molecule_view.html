@@ -1,40 +1,46 @@
+{% extends "template.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Molecule Viewer</title>
-    <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <style>
-        #viewer {
-            width: 600px;
-            height: 400px;
-            border: 1px solid black;
-        }
-    </style>
-</head>
+{% block title %}ChemVisualizer | {{ name }}{% endblock %}
+{% block head %}
+<script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+<script>
+    function sendScreenSize() {
+        let width = Math.min(window.innerWidth * 0.9, 1000); // 90% ширини екрану
+        let height = Math.min(window.innerHeight * 0.5, 600); // 50% висоти
 
-<body>
-    <h1>3D Molecule Viewer</h1>
-    <br>
-    <div id="viewer"></div>
+        fetch('/set_viewer_size/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ width: width, height: height })
+        });
+    }
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var molBlock = `{{ mol_block|escapejs }}`;
+    window.onload = sendScreenSize; // Виконуємо після завантаження сторінки
+    window.onresize = sendScreenSize; // Виконуємо при зміні розміру вікна
+</script>
+{% endblock %}
 
-            if (molBlock.trim()) {
-                var viewer = $3Dmol.createViewer("viewer", { backgroundColor: "white" });
-                viewer.addModel(molBlock, "sdf");
-                viewer.setStyle({}, { stick: {} });
 
-                // Додаємо підписи атомів
-                var atoms = viewer.getModel().selectedAtoms({});
-                atoms.forEach(atom => {
-                    console.log(atom.elem)
+{% block body %}
+<h1 class="nameOfProject">ChemVisualizer</h1>
+<br>
+<div id="viewer"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var molBlock = `{{ mol_block|escapejs }}`;
+
+        if (molBlock.trim()) {
+            var viewer = $3Dmol.createViewer("viewer", { backgroundColor: "transparent" });
+            viewer.addModel(molBlock, "sdf");
+
+            // Тонкі зв'язки та невеликі сфери
+            viewer.setStyle({}, { stick: { radius: 0.07 }, sphere: { radius: 0.3 } });
+
+            // Додаємо підписи атомів із зміщенням
+            var atoms = viewer.getModel().selectedAtoms({});
+            atoms.forEach(atom => {
                     viewer.addLabel(atom.elem, {
                         position: { x: atom.x, y: atom.y + 0.3, z: atom.z },
                         fontSize: 18,
@@ -43,14 +49,15 @@
                         backgroundOpacity: 0.0      // Повна прозорість фону
                     });
                 });
+            viewer.setBackgroundColor("white");
 
-                viewer.zoomTo();
-                viewer.render();
-            } else {
-                console.error("MolBlock порожній або не був переданий.");
-            }
-        });
-    </script>
-</body>
 
-</html>
+            viewer.zoomTo();
+            viewer.render();
+        } else {
+            console.error("MolBlock порожній або не був переданий.");
+        }
+    });
+
+</script>
+{% endblock %}

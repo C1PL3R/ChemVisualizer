@@ -1,0 +1,61 @@
+@media(max-width: 768px) {
+    body {
+        background: #4e4ebf;
+        color: #9f9fd3;
+        background-image: url('Media/5302922.png'); /* Вказуємо шлях до вашого зображення */
+        background-repeat: repeat; /* Вказуємо, щоб зображення повторювалося */
+        background-size: contain; 
+    }
+    .sidebar{
+        margin: 0px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        z-index: 10;
+    }
+    .content input{
+        width: 280px;
+        padding-left: 10px;
+        border-radius: 10px;
+    }
+    .inputElements{
+        position: relative;
+        left: -70px;
+        z-index: 0;
+    }
+    .inputElements button{
+        width: 280px;
+        border-radius: 10px;
+        margin-top: -30px;
+    }
+    .nameOfProject{
+        margin-top: 10px;
+    }
+    #viewer{
+        width: 95%;
+        margin-left: -70px;
+    }
+    #moleculeLink {
+        display: none;
+        text-decoration: none;
+        color: #31315a;
+        background-color: #a6a6d8;
+        margin-top: 20px;
+        margin-left: -70px;
+        font-size: 20px;
+        width: 250px;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+        transition: 0.5s;
+    }
+    
+    #moleculeLink:hover{
+        background-color: #bebef9;
+        text-decoration: solid;
+    }
+    
+    #moleculeLink:hover::before{
+        background-color: #a6a6d8;
+        text-decoration: none;
+    }
+}

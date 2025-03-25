@@ -1,20 +1,16 @@
+{% extends "template.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Molecule Viewer</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
-<body>
-    <h1>3D Molecule Viewer</h1>
-    <div>
-        <input id="inputName" type="text">
-        <button onclick="SendName()">Надіслати</button>
-    </div>
 
-    <a id="moleculeLink" href="">Переглянути тут!</a>
-    <script src="{% static 'main.js' %}"></script>
-</body>
-</html>
+{% block title %}ChemVisualizer | Головна сторінка{% endblock %}
+
+{% block body %}
+<div class="inputElements">
+    <h1>ChemVisualizer</h1>
+    <input id="inputName" type="text" placeholder="Введіть назву речовини">
+    <br>
+    <button onclick="SendName()">Надіслати</button>
+</div>
+
+<a id="moleculeLink" href="">Переглянути тут!</a>
+<script src="{% static 'main.js' %}"></script>
+{% endblock %}

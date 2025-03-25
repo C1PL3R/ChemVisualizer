@@ -481,8 +481,17 @@
         "kind": 5,
         "importPath": "ChemVisualizer.ChemVisualizer.molecules.urls",
         "description": "ChemVisualizer.ChemVisualizer.molecules.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n    path('molecule-smiles/', views.get_molecule_smiles, name='get_molecule_smiles'),\n    path('view_molecule/<str:smiles>/', views.molecule_view, name='view_molecule')\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n    path('molecule-smiles/', views.get_molecule_smiles, name='get_molecule_smiles'),\n    path('view_molecule/<str:name>/<str:smiles>/', views.molecule_view, name='view_molecule'),\n    path('set_viewer_size/', views.set_viewer_size, name='set_viewer_size'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles')\n]",
         "detail": "ChemVisualizer.ChemVisualizer.molecules.urls",
+        "documentation": {}
+    },
+    {
+        "label": "set_viewer_size",
+        "kind": 2,
+        "importPath": "ChemVisualizer.ChemVisualizer.molecules.views",
+        "description": "ChemVisualizer.ChemVisualizer.molecules.views",
+        "peekOfCode": "def set_viewer_size(request):\n    global viewer_size\n    if request.method == 'POST':\n        data = json.loads(request.body)\n        viewer_size['width'] = int(data.get('width', 1000))\n        viewer_size['height'] = int(data.get('height', 600))\n    return JsonResponse({'status': 'success'})\ndef index(request):\n    return render(request, 'index.html')\ndef about(request):",
+        "detail": "ChemVisualizer.ChemVisualizer.molecules.views",
         "documentation": {}
     },
     {
@@ -490,7 +499,25 @@
         "kind": 2,
         "importPath": "ChemVisualizer.ChemVisualizer.molecules.views",
         "description": "ChemVisualizer.ChemVisualizer.molecules.views",
-        "peekOfCode": "def index(request):\n    return render(request, 'index.html')\ndef molecule_view(request, smiles):\n    # Конвертуємо SMILES в молекулу\n    mol = Chem.MolFromSmiles(smiles)\n    mol = Chem.AddHs(mol)\n    # Генеруємо 3D координати\n    AllChem.EmbedMolecule(mol)\n    block = Chem.MolToMolBlock(mol)\n    # Візуалізація молекули",
+        "peekOfCode": "def index(request):\n    return render(request, 'index.html')\ndef about(request):\n    return render(request, 'about.html')\ndef what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request, name, smiles):\n    global viewer_size\n    width = viewer_size[\"width\"]\n    height = viewer_size[\"height\"]",
+        "detail": "ChemVisualizer.ChemVisualizer.molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "about",
+        "kind": 2,
+        "importPath": "ChemVisualizer.ChemVisualizer.molecules.views",
+        "description": "ChemVisualizer.ChemVisualizer.molecules.views",
+        "peekOfCode": "def about(request):\n    return render(request, 'about.html')\ndef what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request, name, smiles):\n    global viewer_size\n    width = viewer_size[\"width\"]\n    height = viewer_size[\"height\"]\n    print(width, height)\n    mol = Chem.MolFromSmiles(smiles)",
+        "detail": "ChemVisualizer.ChemVisualizer.molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "what_are_smiles",
+        "kind": 2,
+        "importPath": "ChemVisualizer.ChemVisualizer.molecules.views",
+        "description": "ChemVisualizer.ChemVisualizer.molecules.views",
+        "peekOfCode": "def what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request, name, smiles):\n    global viewer_size\n    width = viewer_size[\"width\"]\n    height = viewer_size[\"height\"]\n    print(width, height)\n    mol = Chem.MolFromSmiles(smiles)\n    mol = Chem.AddHs(mol)\n    # Генеруємо 3D координати",
         "detail": "ChemVisualizer.ChemVisualizer.molecules.views",
         "documentation": {}
     },
@@ -499,7 +526,7 @@
         "kind": 2,
         "importPath": "ChemVisualizer.ChemVisualizer.molecules.views",
         "description": "ChemVisualizer.ChemVisualizer.molecules.views",
-        "peekOfCode": "def molecule_view(request, smiles):\n    # Конвертуємо SMILES в молекулу\n    mol = Chem.MolFromSmiles(smiles)\n    mol = Chem.AddHs(mol)\n    # Генеруємо 3D координати\n    AllChem.EmbedMolecule(mol)\n    block = Chem.MolToMolBlock(mol)\n    # Візуалізація молекули\n    viewer = py3Dmol.view(width=1000, height=600)\n    viewer.addModel(block, \"mol\")",
+        "peekOfCode": "def molecule_view(request, name, smiles):\n    global viewer_size\n    width = viewer_size[\"width\"]\n    height = viewer_size[\"height\"]\n    print(width, height)\n    mol = Chem.MolFromSmiles(smiles)\n    mol = Chem.AddHs(mol)\n    # Генеруємо 3D координати\n    AllChem.EmbedMolecule(mol)\n    block = Chem.MolToMolBlock(mol)",
         "detail": "ChemVisualizer.ChemVisualizer.molecules.views",
         "documentation": {}
     },
@@ -509,6 +536,15 @@
         "importPath": "ChemVisualizer.ChemVisualizer.molecules.views",
         "description": "ChemVisualizer.ChemVisualizer.molecules.views",
         "peekOfCode": "def get_molecule_smiles(request):\n    if request.method == 'POST':\n        try:\n            data = json.loads(request.body)\n            name = data.get(\"name\")\n            def get_compounds_by_formula(formula):\n                compounds = pcp.get_compounds(formula, 'name')\n                return compounds\n            results = get_compounds_by_formula(name)\n            if results:",
+        "detail": "ChemVisualizer.ChemVisualizer.molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "viewer_size",
+        "kind": 5,
+        "importPath": "ChemVisualizer.ChemVisualizer.molecules.views",
+        "description": "ChemVisualizer.ChemVisualizer.molecules.views",
+        "peekOfCode": "viewer_size = {'width': 1000, 'height': 600}  # Значення за замовчуванням\n@csrf_exempt\ndef set_viewer_size(request):\n    global viewer_size\n    if request.method == 'POST':\n        data = json.loads(request.body)\n        viewer_size['width'] = int(data.get('width', 1000))\n        viewer_size['height'] = int(data.get('height', 600))\n    return JsonResponse({'status': 'success'})\ndef index(request):",
         "detail": "ChemVisualizer.ChemVisualizer.molecules.views",
         "documentation": {}
     },
