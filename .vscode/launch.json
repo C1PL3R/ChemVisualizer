@@ -13,7 +13,7 @@
             ],
             "django": true,
             "autoStartBrowser": false,
-            "program": "${workspaceFolder}\\ChemVisualizer\\ChemVisualizer\\manage.py"
+            "program": "${workspaceFolder}\\ChemVisualizer\\manage.py"
         },
         {
             "name": "Python Debugger: Django",
