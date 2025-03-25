@@ -29,10 +29,13 @@
     }
     .nameOfProject{
         margin-top: 10px;
+        width: 100px;
+        margin-left: -70px;
     }
     #viewer{
-        width: 95%;
+        width: 360px;
         margin-left: -70px;
+        margin-right: 10px;
     }
     #moleculeLink {
         display: none;

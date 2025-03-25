@@ -1,5 +1,5 @@
 function sendMoleculeRequest(smiles) {
-  fetch("http://127.0.0.1:8000/molecule-smiles/", {
+  fetch("http://192.168.0.108:8000/molecule-smiles/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -24,7 +24,10 @@ function sendMoleculeRequest(smiles) {
         console.error(`Помилка сервера: ${data.error}`);
       }
     })
-    .catch((error) => console.error("Помилка запиту:", error.message));
+    .catch((error) => {
+      console.error("Помилка запиту:", error.message);
+      alert("Введіть назву речовини коректно!"); // Виведе сповіщення
+    });
 }
 
 function SendName() {
