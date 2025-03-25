@@ -180,6 +180,23 @@
         "documentation": {}
     },
     {
+        "label": "get_compounds",
+        "importPath": "pubchempy",
+        "description": "pubchempy",
+        "isExtraImport": true,
+        "detail": "pubchempy",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.parse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.parse",
+        "description": "urllib.parse",
+        "detail": "urllib.parse",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -481,7 +498,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.ChemVisualizer.molecules.urls",
         "description": "ChemVisualizer.ChemVisualizer.molecules.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n    path('molecule-smiles/', views.get_molecule_smiles, name='get_molecule_smiles'),\n    path('view_molecule/<str:name>/<str:smiles>/', views.molecule_view, name='view_molecule'),\n    path('set_viewer_size/', views.set_viewer_size, name='set_viewer_size'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles')\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n    path('molecule-smiles/', views.get_molecule_smiles, name='get_molecule_smiles'),\n    path('view_molecule/<path:name>/<path:smiles>/', views.molecule_view, name='view_molecule'),\n    path('set_viewer_size/', views.set_viewer_size, name='set_viewer_size'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles')\n]",
         "detail": "ChemVisualizer.ChemVisualizer.molecules.urls",
         "documentation": {}
     },
@@ -535,7 +552,7 @@
         "kind": 2,
         "importPath": "ChemVisualizer.ChemVisualizer.molecules.views",
         "description": "ChemVisualizer.ChemVisualizer.molecules.views",
-        "peekOfCode": "def get_molecule_smiles(request):\n    if request.method == 'POST':\n        try:\n            data = json.loads(request.body)\n            name = data.get(\"name\")\n            def get_compounds_by_formula(formula):\n                compounds = pcp.get_compounds(formula, 'name')\n                return compounds\n            results = get_compounds_by_formula(name)\n            if results:",
+        "peekOfCode": "def get_molecule_smiles(request):\n    if request.method == 'POST':\n        try:\n            data = json.loads(request.body)\n            name = data.get(\"name\")\n            decoded_str = urllib.parse.unquote(name)\n            def get_compounds_by_formula(formula):\n                compounds = pcp.get_compounds(formula, 'name')\n                return compounds\n            results = get_compounds_by_formula(decoded_str)",
         "detail": "ChemVisualizer.ChemVisualizer.molecules.views",
         "documentation": {}
     },
@@ -555,24 +572,6 @@
         "description": "ChemVisualizer.ChemVisualizer.manage",
         "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ChemVisualizer.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
         "detail": "ChemVisualizer.ChemVisualizer.manage",
-        "documentation": {}
-    },
-    {
-        "label": "get_compounds_by_formula",
-        "kind": 2,
-        "importPath": "ChemVisualizer.test",
-        "description": "ChemVisualizer.test",
-        "peekOfCode": "def get_compounds_by_formula(formula):\n    compounds = pcp.get_compounds(formula, 'name')\n    return compounds\n# Отримуємо список з'єднань для формули C6H12O6 (може бути кілька ізомерів)\nresults = get_compounds_by_formula(\"Glucose\")\n# Виводимо інформацію\nif results:\n    for compound in results:\n        print(f\"CID: {compound.cid}\")\n        print(f\"Назва: {compound.iupac_name}\")",
-        "detail": "ChemVisualizer.test",
-        "documentation": {}
-    },
-    {
-        "label": "results",
-        "kind": 5,
-        "importPath": "ChemVisualizer.test",
-        "description": "ChemVisualizer.test",
-        "peekOfCode": "results = get_compounds_by_formula(\"Glucose\")\n# Виводимо інформацію\nif results:\n    for compound in results:\n        print(f\"CID: {compound.cid}\")\n        print(f\"Назва: {compound.iupac_name}\")\n        print(f\"Формула: {compound.molecular_formula}\")\n        print(f\"SMILES: {compound.isomeric_smiles}\")\n        print(f\"InChI: {compound.inchi}\\n\")\nelse:",
-        "detail": "ChemVisualizer.test",
         "documentation": {}
     },
     {

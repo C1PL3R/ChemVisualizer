@@ -5,7 +5,9 @@ import py3Dmol
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json            
-import pubchempy as pcp
+import pubchempy as pcp            
+import urllib.parse
+
 
 viewer_size = {'width': 1000, 'height': 600}  # Значення за замовчуванням
 
@@ -64,20 +66,31 @@ def get_molecule_smiles(request):
         try:
             data = json.loads(request.body)
             name = data.get("name")
-
+            decoded_str = urllib.parse.unquote(name)
+            
             def get_compounds_by_formula(formula):
                 compounds = pcp.get_compounds(formula, 'name')
                 return compounds
 
-            results = get_compounds_by_formula(name)
+            results = get_compounds_by_formula(decoded_str)
+            
+            smiles = None  # Ініціалізація змінної перед циклом
             
             if results:
                 for compound in results:
-                    smiles = compound.isomeric_smiles
+                    if compound.isomeric_smiles:
+                        smiles = compound.isomeric_smiles
+                        break  # Беремо перший знайдений SMILES і виходимо з циклу
             
-            return JsonResponse({'status': 'success', 'smiles': smiles, 'name': name})
+            if smiles:
+                return JsonResponse({'status': 'success', 'smiles': smiles, 'name': decoded_str})
+            else:
+                return JsonResponse({'status': 'fail', 'error': 'SMILES not found for given name'}, status=404)
+        
         except json.JSONDecodeError:
             return JsonResponse({'status': 'fail', 'error': 'Invalid JSON'}, status=400)
         except Exception as e:
+            print(e)
             return JsonResponse({'status': 'fail', 'error': str(e)}, status=500)
+
     return JsonResponse({'status': 'fail', 'error': 'Invalid HTTP method'}, status=405)
