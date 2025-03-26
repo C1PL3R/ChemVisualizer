@@ -114,10 +114,3 @@
         display: flex;
     }
 }
-
-@media (max-width: 360px) {
-    body {
-        background-size: contain;
-        max-width: 360px;
-    }
-}
