@@ -16,7 +16,7 @@ h1 {
     color: rgb(255, 255, 255);
 }
 
-#MainText{
+#MainText {
     width: 100%;
     text-align: center;
 }
@@ -322,7 +322,7 @@ h1 {
     text-decoration: underline;
 }
 
-#nameOfSubstanceButton{
+#nameOfSubstanceButton {
     margin-top: 20px;
 }
 
@@ -346,7 +346,17 @@ h1 {
     white-space: nowrap;
 }
 
-#History-text{
+#History-text {
     color: white;
     font-size: 30px;
+}
+
+#MainText {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#MainText_in_inputElements{
+    display: none;
 }

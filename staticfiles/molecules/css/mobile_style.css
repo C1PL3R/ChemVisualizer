@@ -1,38 +1,45 @@
 @media(max-width: 768px) {
     body {
-        background-size: contain; 
+        background-size: contain;
     }
-    .sidebar{
+
+    .sidebar {
         margin: 0px;
         border-top-left-radius: 0px;
         border-bottom-left-radius: 0px;
         z-index: 10;
     }
-    .content input{
+
+    .content input {
         width: 280px;
         padding-left: 10px;
         border-radius: 10px;
     }
-    .inputElements{
+
+    .inputElements {
         position: relative;
         left: -70px;
         z-index: 0;
     }
-    .inputElements button{
+
+    .inputElements button {
         width: 280px;
         border-radius: 10px;
         margin-top: -30px;
     }
-    .nameOfProject{
+
+    .nameOfProject {
         margin-top: 10px;
         width: 100px;
         margin-left: -70px;
     }
-    #viewer{
+
+    #viewer {
         width: 360px;
         margin-left: -70px;
         margin-right: 10px;
     }
+
     #moleculeLink {
         display: none;
         text-decoration: none;
@@ -47,23 +54,24 @@
         border-radius: 10px;
         transition: 0.5s;
     }
-    
-    #moleculeLink:hover{
+
+    #moleculeLink:hover {
         background-color: #bebef9;
         text-decoration: solid;
     }
-    
-    #moleculeLink:hover::before{
+
+    #moleculeLink:hover::before {
         background-color: #a6a6d8;
         text-decoration: none;
     }
 
-    .text{
+    .text {
         width: 100%;
         margin-left: -40px;
     }
 
-    #nameOfSubstance, #smilesOfSubstance{
+    #nameOfSubstance,
+    #smilesOfSubstance {
         width: 270px;
         padding: 20px;
         border: none;
@@ -77,29 +85,32 @@
         text-align: center;
     }
 
-    #nameOfSubstance input, #smilesOfSubstance input{
+    #nameOfSubstance input,
+    #smilesOfSubstance input {
         width: 230px;
         margin-bottom: 20px;
     }
 
-    #smilesOfSubstance input{
+    #smilesOfSubstance input {
         margin-top: 10px;
     }
 
-    #nameOfSubstance button, #smilesOfSubstance button{
+    #nameOfSubstance button,
+    #smilesOfSubstance button {
         padding: 10px;
         width: auto;
         justify-content: center;
         font-size: 17px;
     }
-    #nameOfSubstanceButton{
+
+    #nameOfSubstanceButton {
         margin-bottom: 40px;
     }
-}
 
-@media (max-width: 360px) {
-    body {
-        background-size: contain; 
-        max-width: 360px;
+    #MainText {
+        display: none;
+    }
+    #MainText_in_inputElements{
+        display: flex;
     }
 }
