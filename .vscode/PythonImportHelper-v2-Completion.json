@@ -186,6 +186,14 @@
         "documentation": {}
     },
     {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "csrf_exempt",
         "importPath": "django.views.decorators.csrf",
         "description": "django.views.decorators.csrf",
@@ -208,14 +216,6 @@
         "isExtraImport": true,
         "importPath": "pubchempy",
         "description": "pubchempy",
-        "detail": "pubchempy",
-        "documentation": {}
-    },
-    {
-        "label": "get_compounds",
-        "importPath": "pubchempy",
-        "description": "pubchempy",
-        "isExtraImport": true,
         "detail": "pubchempy",
         "documentation": {}
     },
@@ -251,7 +251,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-!6alrba$)s%=k$5xm)oolyciag7)_4o5*srfu19)b&0li2w&5n'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = ['127.0.0.1']\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-!6alrba$)s%=k$5xm)oolyciag7)_4o5*srfu19)b&0li2w&5n'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\n#DEBUG = False\nALLOWED_HOSTS = ['127.0.0.1', 'chemvisualizer.pythonanywhere.com']\n# Application definition",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -260,7 +260,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-!6alrba$)s%=k$5xm)oolyciag7)_4o5*srfu19)b&0li2w&5n'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = ['127.0.0.1']\n# Application definition\nINSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-!6alrba$)s%=k$5xm)oolyciag7)_4o5*srfu19)b&0li2w&5n'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\n#DEBUG = False\nALLOWED_HOSTS = ['127.0.0.1', 'chemvisualizer.pythonanywhere.com']\n# Application definition\nINSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -269,7 +269,16 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = ['127.0.0.1']\n# Application definition\nINSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
+        "peekOfCode": "DEBUG = True\n#DEBUG = False\nALLOWED_HOSTS = ['127.0.0.1', 'chemvisualizer.pythonanywhere.com']\n# Application definition\nINSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#DEBUG",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "#DEBUG = False\nALLOWED_HOSTS = ['127.0.0.1', 'chemvisualizer.pythonanywhere.com']\n# Application definition\nINSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -278,7 +287,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "ALLOWED_HOSTS = ['127.0.0.1']\n# Application definition\nINSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "ALLOWED_HOSTS = ['127.0.0.1', 'chemvisualizer.pythonanywhere.com']\n# Application definition\nINSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -467,7 +476,7 @@
         "kind": 5,
         "importPath": "molecules.urls",
         "description": "molecules.urls",
-        "peekOfCode": "handler404 = 'your_project.views.custom_page_not_found'\nhandler500 = 'your_project.views.custom_error_view'\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('molecule-smiles/', views.get_molecule_smiles, name='get_molecule_smiles'),\n    path('view_molecule/<path:name>/<path:smiles>/', views.molecule_view, name='view_molecule'),\n    path('set_viewer_size/', views.set_viewer_size, name='set_viewer_size'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
+        "peekOfCode": "handler404 = 'your_project.views.custom_page_not_found'\nhandler500 = 'your_project.views.custom_error_view'\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('set_viewer_size/', views.set_viewer_size, name='set_viewer_size'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
         "detail": "molecules.urls",
         "documentation": {}
     },
@@ -476,7 +485,7 @@
         "kind": 5,
         "importPath": "molecules.urls",
         "description": "molecules.urls",
-        "peekOfCode": "handler500 = 'your_project.views.custom_error_view'\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('molecule-smiles/', views.get_molecule_smiles, name='get_molecule_smiles'),\n    path('view_molecule/<path:name>/<path:smiles>/', views.molecule_view, name='view_molecule'),\n    path('set_viewer_size/', views.set_viewer_size, name='set_viewer_size'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
+        "peekOfCode": "handler500 = 'your_project.views.custom_error_view'\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('set_viewer_size/', views.set_viewer_size, name='set_viewer_size'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
         "detail": "molecules.urls",
         "documentation": {}
     },
@@ -485,7 +494,7 @@
         "kind": 5,
         "importPath": "molecules.urls",
         "description": "molecules.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n    path('molecule-smiles/', views.get_molecule_smiles, name='get_molecule_smiles'),\n    path('view_molecule/<path:name>/<path:smiles>/', views.molecule_view, name='view_molecule'),\n    path('set_viewer_size/', views.set_viewer_size, name='set_viewer_size'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('set_viewer_size/', views.set_viewer_size, name='set_viewer_size'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
         "detail": "molecules.urls",
         "documentation": {}
     },
@@ -503,7 +512,7 @@
         "kind": 2,
         "importPath": "molecules.views",
         "description": "molecules.views",
-        "peekOfCode": "def index(request):\n    return render(request, 'index.html')\ndef about(request):\n    return render(request, 'about.html')\ndef what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request, name, smiles):\n    global viewer_size\n    width = viewer_size[\"width\"]\n    height = viewer_size[\"height\"]",
+        "peekOfCode": "def index(request):\n    return render(request, 'index.html')\ndef about(request):\n    return render(request, 'about.html')\ndef what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request):\n    global viewer_size\n    width = viewer_size[\"width\"]\n    height = viewer_size[\"height\"]",
         "detail": "molecules.views",
         "documentation": {}
     },
@@ -512,7 +521,7 @@
         "kind": 2,
         "importPath": "molecules.views",
         "description": "molecules.views",
-        "peekOfCode": "def about(request):\n    return render(request, 'about.html')\ndef what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request, name, smiles):\n    global viewer_size\n    width = viewer_size[\"width\"]\n    height = viewer_size[\"height\"]\n    print(width, height)\n    mol = Chem.MolFromSmiles(smiles)",
+        "peekOfCode": "def about(request):\n    return render(request, 'about.html')\ndef what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request):\n    global viewer_size\n    width = viewer_size[\"width\"]\n    height = viewer_size[\"height\"]\n    name = request.COOKIES.get('moleculeName')\n    smiles = request.COOKIES.get('moleculeSmiles')",
         "detail": "molecules.views",
         "documentation": {}
     },
@@ -521,7 +530,7 @@
         "kind": 2,
         "importPath": "molecules.views",
         "description": "molecules.views",
-        "peekOfCode": "def what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request, name, smiles):\n    global viewer_size\n    width = viewer_size[\"width\"]\n    height = viewer_size[\"height\"]\n    print(width, height)\n    mol = Chem.MolFromSmiles(smiles)\n    mol = Chem.AddHs(mol)\n    # Генеруємо 3D координати",
+        "peekOfCode": "def what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request):\n    global viewer_size\n    width = viewer_size[\"width\"]\n    height = viewer_size[\"height\"]\n    name = request.COOKIES.get('moleculeName')\n    smiles = request.COOKIES.get('moleculeSmiles')\n    if smiles is None or smiles == \"\":\n        def get_compounds_by_formula(formula):",
         "detail": "molecules.views",
         "documentation": {}
     },
@@ -530,16 +539,7 @@
         "kind": 2,
         "importPath": "molecules.views",
         "description": "molecules.views",
-        "peekOfCode": "def molecule_view(request, name, smiles):\n    global viewer_size\n    width = viewer_size[\"width\"]\n    height = viewer_size[\"height\"]\n    print(width, height)\n    mol = Chem.MolFromSmiles(smiles)\n    mol = Chem.AddHs(mol)\n    # Генеруємо 3D координати\n    AllChem.EmbedMolecule(mol)\n    block = Chem.MolToMolBlock(mol)",
-        "detail": "molecules.views",
-        "documentation": {}
-    },
-    {
-        "label": "get_molecule_smiles",
-        "kind": 2,
-        "importPath": "molecules.views",
-        "description": "molecules.views",
-        "peekOfCode": "def get_molecule_smiles(request):\n    if request.method == 'POST':\n        try:\n            data = json.loads(request.body)\n            name = data.get(\"name\")\n            decoded_str = urllib.parse.unquote(name)\n            def get_compounds_by_formula(formula):\n                compounds = pcp.get_compounds(formula, 'name')\n                return compounds\n            results = get_compounds_by_formula(decoded_str)",
+        "peekOfCode": "def molecule_view(request):\n    global viewer_size\n    width = viewer_size[\"width\"]\n    height = viewer_size[\"height\"]\n    name = request.COOKIES.get('moleculeName')\n    smiles = request.COOKIES.get('moleculeSmiles')\n    if smiles is None or smiles == \"\":\n        def get_compounds_by_formula(formula):\n            compounds = pcp.get_compounds(formula, 'name')\n            return compounds",
         "detail": "molecules.views",
         "documentation": {}
     },

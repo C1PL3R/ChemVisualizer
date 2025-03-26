@@ -57,4 +57,42 @@
         background-color: #a6a6d8;
         text-decoration: none;
     }
+
+    .text{
+        width: 100%;
+        margin-left: -40px;
+    }
+
+    #nameOfSubstance, #smilesOfSubstance{
+        width: 270px;
+        padding: 20px;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: relative;
+        top: 40%;
+        left: 30%;
+        border-radius: 10px;
+        font-size: 15px;
+        z-index: 5;
+        text-align: center;
+    }
+
+    #nameOfSubstance input, #smilesOfSubstance input{
+        width: 230px;
+        margin-bottom: 20px;
+    }
+
+    #smilesOfSubstance input{
+        margin-top: 10px;
+    }
+
+    #nameOfSubstance button, #smilesOfSubstance button{
+        padding: 10px;
+        width: auto;
+        justify-content: center;
+        font-size: 17px;
+    }
+    #nameOfSubstanceButton{
+        margin-bottom: 40px;
+    }
 }

@@ -16,7 +16,7 @@ h1 {
     color: rgb(255, 255, 255);
 }
 
-#moleculeLink {
+#moleculeLinkName, #moleculeLinkSmileCode {
     display: none;
     text-decoration: none;
     color: #31315a;
@@ -26,17 +26,19 @@ h1 {
     font-size: 20px;
     width: 250px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     border-radius: 10px;
     transition: 0.5s;
 }
 
-#moleculeLink:hover{
+#moleculeLinkName:hover, #moleculeLinkSmileCode:hover{
     background-color: #bebef9;
-    text-decoration: solid;
+    text-decoration: underline;
 }
 
-#moleculeLink:hover::before{
+#moleculeLinkName:hover::before, #moleculeLinkSmileCode:hover::before{
     background-color: #a6a6d8;
     text-decoration: none;
 }
@@ -60,7 +62,7 @@ h1 {
 .sidebar {
     grid-area: menu;
     --color-primary: #4651ca;
-    position: fixed;
+    position: absolute;
     overflow: hidden;
     top: 0;
     left: 0;
@@ -229,7 +231,7 @@ h1 {
 }
 
 .content input{
-    width: 900px;
+    width: 500px;
     padding: 7px;
     border-radius: 20px;
     padding-left: 30px;
@@ -246,7 +248,7 @@ h1 {
     font-size: 18px;
 }
 
-.content input::selection{
+::selection{
     background-color: #31315a;
     color: #f9f9f9;
     padding: 2px;
@@ -256,8 +258,8 @@ h1 {
     width: 250px;
     height: 50px;
     border: none;
-    border-radius: 20px;
-    font-size: 20px;
+    border-radius: 10px;
+    font-size: 15px;
 }
 
 .content .inputElements h1{
@@ -270,4 +272,38 @@ h1 {
     align-items: start;
     gap: 20px;
     position: relative;
+}
+
+.inputElements button a{
+    color: black;
+}
+
+#nameOfSubstance, #smilesOfSubstance{
+    padding: 20px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 11;
+    position: relative;
+    top: 40%;
+    left: 30%;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+#smilesOfSubstance h1{
+    width: auto;
+    padding: 3px;
+    background-color: #333383;
+    color: #f9f9f9;
+    margin-top: 0px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+#nameOfSubstance button, #smilesOfSubstance button{
+    transition: 0.5s;
+}
+
+#nameOfSubstance button:hover, #smilesOfSubstance button:hover{
+    text-decoration: underline;
 }
