@@ -97,6 +97,54 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
+        "label": "handler400",
+        "importPath": "django.conf.urls",
+        "description": "django.conf.urls",
+        "isExtraImport": true,
+        "detail": "django.conf.urls",
+        "documentation": {}
+    },
+    {
+        "label": "handler403",
+        "importPath": "django.conf.urls",
+        "description": "django.conf.urls",
+        "isExtraImport": true,
+        "detail": "django.conf.urls",
+        "documentation": {}
+    },
+    {
+        "label": "handler404",
+        "importPath": "django.conf.urls",
+        "description": "django.conf.urls",
+        "isExtraImport": true,
+        "detail": "django.conf.urls",
+        "documentation": {}
+    },
+    {
+        "label": "handler500",
+        "importPath": "django.conf.urls",
+        "description": "django.conf.urls",
+        "isExtraImport": true,
+        "detail": "django.conf.urls",
+        "documentation": {}
+    },
+    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -203,7 +251,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-!6alrba$)s%=k$5xm)oolyciag7)_4o5*srfu19)b&0li2w&5n'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.0.108', '127.0.0.1', 'localhost']\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-!6alrba$)s%=k$5xm)oolyciag7)_4o5*srfu19)b&0li2w&5n'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = ['127.0.0.1']\n# Application definition\nINSTALLED_APPS = [",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -212,7 +260,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-!6alrba$)s%=k$5xm)oolyciag7)_4o5*srfu19)b&0li2w&5n'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.0.108', '127.0.0.1', 'localhost']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-!6alrba$)s%=k$5xm)oolyciag7)_4o5*srfu19)b&0li2w&5n'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = ['127.0.0.1']\n# Application definition\nINSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -221,7 +269,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = ['192.168.0.108', '127.0.0.1', 'localhost']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = ['127.0.0.1']\n# Application definition\nINSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -230,7 +278,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "ALLOWED_HOSTS = ['192.168.0.108', '127.0.0.1', 'localhost']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # Додатки",
+        "peekOfCode": "ALLOWED_HOSTS = ['127.0.0.1']\n# Application definition\nINSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -239,7 +287,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # Додатки\n    'molecules',\n    # Django REST Framework",
+        "peekOfCode": "INSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # Додатки\n    'molecules',",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -248,7 +296,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'ChemVisualizer.urls'",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    \"whitenoise.middleware.WhiteNoiseMiddleware\",\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -257,7 +305,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "ROOT_URLCONF = 'ChemVisualizer.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [BASE_DIR / 'templates'],  # Додаємо цей рядок\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "peekOfCode": "ROOT_URLCONF = 'ChemVisualizer.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -266,7 +314,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [BASE_DIR / 'templates'],  # Додаємо цей рядок\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -302,7 +350,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / \"static\",  # або точний шлях\n]",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Додаємо правильний шлях до статичних файлів\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'molecules', 'static'),  # Тепер всередині додатку",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -311,7 +359,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / \"static\",  # або точний шлях\n]\n# Default primary key field type",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Додаємо правильний шлях до статичних файлів\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'molecules', 'static'),  # Тепер всередині додатку\n]",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -320,7 +368,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / \"static\",  # або точний шлях\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Додаємо правильний шлях до статичних файлів\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'molecules', 'static'),  # Тепер всередині додатку\n]\n# Куди Django буде збирати всі статичні файли (для продакшну)",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -329,7 +377,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / \"static\",  # або точний шлях\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Додаємо правильний шлях до статичних файлів\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'molecules', 'static'),  # Тепер всередині додатку\n]\n# Куди Django буде збирати всі статичні файли (для продакшну)\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -338,7 +386,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / \"static\",  # або точний шлях\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Додаємо правильний шлях до статичних файлів\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'molecules', 'static'),  # Тепер всередині додатку\n]\n# Куди Django буде збирати всі статичні файли (для продакшну)\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -347,7 +395,34 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "STATICFILES_DIRS = [\n    BASE_DIR / \"static\",  # або точний шлях\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'molecules', 'static'),  # Тепер всередині додатку\n]\n# Куди Django буде збирати всі статичні файли (для продакшну)\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_ROOT",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -388,11 +463,29 @@
         "documentation": {}
     },
     {
+        "label": "handler404",
+        "kind": 5,
+        "importPath": "molecules.urls",
+        "description": "molecules.urls",
+        "peekOfCode": "handler404 = 'your_project.views.custom_page_not_found'\nhandler500 = 'your_project.views.custom_error_view'\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('molecule-smiles/', views.get_molecule_smiles, name='get_molecule_smiles'),\n    path('view_molecule/<path:name>/<path:smiles>/', views.molecule_view, name='view_molecule'),\n    path('set_viewer_size/', views.set_viewer_size, name='set_viewer_size'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
+        "detail": "molecules.urls",
+        "documentation": {}
+    },
+    {
+        "label": "handler500",
+        "kind": 5,
+        "importPath": "molecules.urls",
+        "description": "molecules.urls",
+        "peekOfCode": "handler500 = 'your_project.views.custom_error_view'\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('molecule-smiles/', views.get_molecule_smiles, name='get_molecule_smiles'),\n    path('view_molecule/<path:name>/<path:smiles>/', views.molecule_view, name='view_molecule'),\n    path('set_viewer_size/', views.set_viewer_size, name='set_viewer_size'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
+        "detail": "molecules.urls",
+        "documentation": {}
+    },
+    {
         "label": "urlpatterns",
         "kind": 5,
         "importPath": "molecules.urls",
         "description": "molecules.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n    path('molecule-smiles/', views.get_molecule_smiles, name='get_molecule_smiles'),\n    path('view_molecule/<path:name>/<path:smiles>/', views.molecule_view, name='view_molecule'),\n    path('set_viewer_size/', views.set_viewer_size, name='set_viewer_size'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles')\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n    path('molecule-smiles/', views.get_molecule_smiles, name='get_molecule_smiles'),\n    path('view_molecule/<path:name>/<path:smiles>/', views.molecule_view, name='view_molecule'),\n    path('set_viewer_size/', views.set_viewer_size, name='set_viewer_size'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
         "detail": "molecules.urls",
         "documentation": {}
     },
@@ -447,6 +540,24 @@
         "importPath": "molecules.views",
         "description": "molecules.views",
         "peekOfCode": "def get_molecule_smiles(request):\n    if request.method == 'POST':\n        try:\n            data = json.loads(request.body)\n            name = data.get(\"name\")\n            decoded_str = urllib.parse.unquote(name)\n            def get_compounds_by_formula(formula):\n                compounds = pcp.get_compounds(formula, 'name')\n                return compounds\n            results = get_compounds_by_formula(decoded_str)",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "custom_page_not_found",
+        "kind": 2,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "def custom_page_not_found(request, exception):\n    return render(request, '404.html', status=404)\ndef custom_error_view(request):\n    return render(request, '500.html', status=500)",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "custom_error_view",
+        "kind": 2,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "def custom_error_view(request):\n    return render(request, '500.html', status=500)",
         "detail": "molecules.views",
         "documentation": {}
     },

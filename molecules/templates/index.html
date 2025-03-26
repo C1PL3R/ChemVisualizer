@@ -1,0 +1,16 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block title %}ChemVisualizer | Головна сторінка{% endblock %}
+
+{% block body %}
+<div class="inputElements">
+    <h1>ChemVisualizer</h1>
+    <input id="inputName" type="text" placeholder="Введіть назву речовини">
+    <br>
+    <button style="cursor: pointer;" onclick="SendName()">Надіслати</button>
+</div>
+
+<a id="moleculeLink" href="">Переглянути тут!</a>
+<script src="{% static 'molecules/js/main.js' %}"></script>
+{% endblock %}

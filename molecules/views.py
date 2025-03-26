@@ -81,7 +81,6 @@ def get_molecule_smiles(request):
                     if compound.isomeric_smiles:
                         smiles = compound.isomeric_smiles
                         break  # Беремо перший знайдений SMILES і виходимо з циклу
-            
             if smiles:
                 return JsonResponse({'status': 'success', 'smiles': smiles, 'name': decoded_str})
             else:
@@ -94,3 +93,10 @@ def get_molecule_smiles(request):
             return JsonResponse({'status': 'fail', 'error': str(e)}, status=500)
 
     return JsonResponse({'status': 'fail', 'error': 'Invalid HTTP method'}, status=405)
+
+
+def custom_page_not_found(request, exception):
+    return render(request, '404.html', status=404)
+
+def custom_error_view(request):
+    return render(request, '500.html', status=500)
