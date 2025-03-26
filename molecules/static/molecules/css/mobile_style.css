@@ -110,7 +110,7 @@
     #MainText {
         display: none;
     }
-    .inputElements #MainText{
+    #MainText_in_inputElements{
         display: flex;
     }
 }
