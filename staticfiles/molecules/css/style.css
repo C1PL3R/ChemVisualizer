@@ -16,7 +16,13 @@ h1 {
     color: rgb(255, 255, 255);
 }
 
-#moleculeLinkName, #moleculeLinkSmileCode {
+#MainText{
+    width: 100%;
+    text-align: center;
+}
+
+#moleculeLinkName,
+#moleculeLinkSmileCode {
     display: none;
     text-decoration: none;
     color: #31315a;
@@ -33,12 +39,14 @@ h1 {
     transition: 0.5s;
 }
 
-#moleculeLinkName:hover, #moleculeLinkSmileCode:hover{
+#moleculeLinkName:hover,
+#moleculeLinkSmileCode:hover {
     background-color: #bebef9;
     text-decoration: underline;
 }
 
-#moleculeLinkName:hover::before, #moleculeLinkSmileCode:hover::before{
+#moleculeLinkName:hover::before,
+#moleculeLinkSmileCode:hover::before {
     background-color: #a6a6d8;
     text-decoration: none;
 }
@@ -48,7 +56,8 @@ h1 {
     width: 100%;
     height: 100vh;
     text-align: left;
-    padding-left: 100px; /* Відступ для коректного відображення поряд з сайдбаром */
+    padding-left: 100px;
+    /* Відступ для коректного відображення поряд з сайдбаром */
 }
 
 .main_container {
@@ -152,15 +161,16 @@ h1 {
     cursor: default;
 }
 
-.links{
+.links {
     margin-top: 23px;
     display: flex;
-    flex-direction: column; /* Розташування кнопок у стовпчик */
+    flex-direction: column;
+    /* Розташування кнопок у стовпчик */
     text-align: center;
     gap: 20px;
 }
 
-.links a{
+.links a {
     width: 170px;
     background-color: #31315a;
     text-decoration: none;
@@ -171,13 +181,13 @@ h1 {
     transition: 0.5s;
 }
 
-.links a:hover{
+.links a:hover {
     background-color: #a6a6d8;
     color: #31315a;
     transform-origin: bottom right;
 }
 
-.links a:hover::before{
+.links a:hover::before {
     background-color: #31315a;
     color: #a6a6d8;
     transform-origin: bottom left;
@@ -230,31 +240,31 @@ h1 {
     border-bottom-left-radius: 0;
 }
 
-.content input{
+.content input {
     width: 500px;
     padding: 7px;
     border-radius: 20px;
     padding-left: 30px;
     height: 40px;
     background-color: #9f9fd3;
-    outline: none; 
+    outline: none;
     border: none;
     color: #f9f9f9;
     font-size: 18px;
 }
 
-.content input::placeholder{
+.content input::placeholder {
     color: #f9f9f9;
     font-size: 18px;
 }
 
-::selection{
+::selection {
     background-color: #31315a;
     color: #f9f9f9;
     padding: 2px;
 }
 
-.content button{
+.content button {
     width: 250px;
     height: 50px;
     border: none;
@@ -262,26 +272,28 @@ h1 {
     font-size: 15px;
 }
 
-.content .inputElements h1{
+.content .inputElements h1 {
     margin-top: 30px;
 }
 
-.inputElements{
+.inputElements {
     display: grid;
     justify-content: start;
     align-items: start;
     gap: 20px;
     position: relative;
+    width: 100%;
 }
 
-.inputElements button a{
+.inputElements button a {
     color: black;
 }
 
-#nameOfSubstance, #smilesOfSubstance{
+#nameOfSubstance,
+#smilesOfSubstance {
     padding: 20px;
     border: none;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 11;
     position: relative;
     top: 40%;
@@ -290,7 +302,7 @@ h1 {
     font-size: 15px;
 }
 
-#smilesOfSubstance h1{
+#smilesOfSubstance h1 {
     width: auto;
     padding: 3px;
     background-color: #333383;
@@ -300,10 +312,41 @@ h1 {
     margin-bottom: 10px;
 }
 
-#nameOfSubstance button, #smilesOfSubstance button{
+#nameOfSubstance button,
+#smilesOfSubstance button {
     transition: 0.5s;
 }
 
-#nameOfSubstance button:hover, #smilesOfSubstance button:hover{
+#nameOfSubstance button:hover,
+#smilesOfSubstance button:hover {
     text-decoration: underline;
+}
+
+#nameOfSubstanceButton{
+    margin-top: 20px;
+}
+
+.history-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.history-container::before,
+.history-container::after {
+    content: '';
+    flex: 1;
+    border-top: 1px solid rgb(255, 255, 255);
+    margin: 0 10px;
+}
+
+.history-container span {
+    white-space: nowrap;
+}
+
+#History-text{
+    color: white;
+    font-size: 30px;
 }

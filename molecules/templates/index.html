@@ -4,10 +4,11 @@
 {% block title %}ChemVisualizer | Головна сторінка{% endblock %}
 
 {% block body %}
-<div class="inputElements">
+<div id="MainText">
     <h1>ChemVisualizer</h1>
-    <br>
-
+</div>
+<div class="inputElements">
+    <h1 id='MainText'>ChemVisualizer</h1>
     <button id="nameOfSubstanceButton" popovertarget="nameOfSubstance">
         Написати назву речовини
     </button>
@@ -24,11 +25,16 @@
 
 
 <div id="smilesOfSubstance" popover>
-    <h1><a style="color: white; cursor: pointer;" href="{% url 'what_are_smiles' %}">SMILES-код</a> який ви ввели не збережеться в історії!</h1>
+    <h1><a style="color: white; cursor: pointer;" href="{% url 'what_are_smiles' %}">SMILES-код</a> який ви ввели не
+        збережеться в історії!</h1>
     <input id="inputSmiles" type="text" placeholder="Введіть smiles речовини">
     <button style="cursor: pointer;" onclick="SendNameAndSmiles()">Надіслати</button>
     <a id="moleculeLinkSmileCode" href="">Переглянути тут!</a>
 </div>
+
+<!-- <div class="history-container">
+    <span id="History-text">Історія</span>
+</div> -->
 
 <script src="{% static 'molecules/js/main.js' %}"></script>
 {% endblock %}
