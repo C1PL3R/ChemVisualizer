@@ -113,4 +113,9 @@
     #MainText_in_inputElements{
         display: flex;
     }
+
+    footer{
+        left: 70px;
+        width: calc(100% - 70px);
+    }
 }

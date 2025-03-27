@@ -25,6 +25,14 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -251,7 +259,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-!6alrba$)s%=k$5xm)oolyciag7)_4o5*srfu19)b&0li2w&5n'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\n#DEBUG = False\nALLOWED_HOSTS = ['127.0.0.1', 'chemvisualizer.pythonanywhere.com']\n# Application definition",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nimport os\nfrom dotenv import load_dotenv\nload_dotenv()  # Завантажує змінні з .env\nSECRET_KEY = os.getenv(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -260,7 +268,7 @@
         "kind": 5,
         "importPath": "ChemVisualizer.settings",
         "description": "ChemVisualizer.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-!6alrba$)s%=k$5xm)oolyciag7)_4o5*srfu19)b&0li2w&5n'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\n#DEBUG = False\nALLOWED_HOSTS = ['127.0.0.1', 'chemvisualizer.pythonanywhere.com']\n# Application definition\nINSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',",
+        "peekOfCode": "SECRET_KEY = os.getenv(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\n#DEBUG = False\nALLOWED_HOSTS = ['127.0.0.1', 'chemvisualizer.pythonanywhere.com']\n# Application definition\nINSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',",
         "detail": "ChemVisualizer.settings",
         "documentation": {}
     },
@@ -469,6 +477,15 @@
         "description": "molecules.apps",
         "peekOfCode": "class MoleculesConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'molecules'",
         "detail": "molecules.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Movie",
+        "kind": 6,
+        "importPath": "molecules.models",
+        "description": "molecules.models",
+        "peekOfCode": "class Movie(models.Model):\n    email = models.EmailField(max_length=20, null=True)\n    password = models.CharField(max_length=30, null=True)\n    email = models.EmailField(max_length=20, null=True)\n    def __str__(self):\n        return self.title",
+        "detail": "molecules.models",
         "documentation": {}
     },
     {
