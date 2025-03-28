@@ -110,12 +110,18 @@
     #MainText {
         display: none;
     }
-    #MainText_in_inputElements{
+
+    #MainText_in_inputElements {
         display: flex;
     }
 
-    footer{
-        left: 70px;
-        width: calc(100% - 70px);
+    .text {
+        width: calc(100%-20px);
+        position: absolute;
+        left: 90px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border-radius: 5px;
+        padding: 30px;
     }
 }

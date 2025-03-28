@@ -4,6 +4,8 @@
 {% block title %}ChemVisualizer | {{ name }}{% endblock %}
 {% block head %}
 <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/STLLoader.js"></script>
 <script>
     function sendScreenSize() {
         let width = Math.min(window.innerWidth * 0.9, 1000); // 90% ширини екрану
@@ -19,6 +21,13 @@
     window.onload = sendScreenSize; // Виконуємо після завантаження сторінки
     window.onresize = sendScreenSize; // Виконуємо при зміні розміру вікна
 </script>
+
+<style>
+    #downloadBtn{
+        margin-top: 20px;
+        z-index: 10;
+    }
+</style>
 {% endblock %}
 
 
@@ -26,6 +35,26 @@
 <h1 class="nameOfProject">ChemVisualizer</h1>
 <br>
 <div id="viewer"></div>
+
+<button id="downloadBtn">Завантажити 3D модель</button>
+
+<script>
+    document.getElementById("downloadBtn").addEventListener("click", function () {
+        var Data = `{{ mol_block|escapejs }}`;
+
+        if (Data.trim()) {
+            var blob = new Blob([Data], { type: "text/plain" });
+            var link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "molecule.mol";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } else {
+            console.error("MOL дані порожні!");
+        }
+    });
+</script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {

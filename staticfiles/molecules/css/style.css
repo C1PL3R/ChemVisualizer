@@ -193,6 +193,20 @@ h1 {
     transform-origin: bottom left;
 }
 
+#GitHub {
+    position: absolute;
+    bottom: 0;
+    transition: 0.5s;
+}
+
+#GitHub svg {
+    color: white;
+}
+
+#GitHub:hover {
+    background-color: #707090;
+}
+
 .right button {
     padding: 8px 8px;
     background: transparent;
@@ -212,6 +226,8 @@ h1 {
     display: grid;
     place-items: center;
 }
+
+
 
 .right button:hover {
     color: #f9f9f9;
@@ -302,6 +318,12 @@ h1 {
     font-size: 15px;
 }
 
+#nameOfSubstance input,
+#smilesOfSubstance input {
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
 #smilesOfSubstance h1 {
     width: auto;
     padding: 3px;
@@ -357,17 +379,33 @@ h1 {
     justify-content: center;
 }
 
-#MainText_in_inputElements{
+#MainText_in_inputElements {
     display: none;
 }
 
-footer{
-    position: relative;
+#footer {
+    position: absolute;
+    left: 0;
     bottom: 0;
     width: 100%;
     height: 50px;
     padding: 10px;
-    background-color: #4651ca;
+    background-color: #1d1d2b;
     color: white;
     align-items: center;
+}
+
+footer a {
+    color: white;
+    transition: 0.5s;
+}
+
+#downloadBtn{
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+
+button:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }

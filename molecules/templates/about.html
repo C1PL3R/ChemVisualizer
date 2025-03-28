@@ -2,7 +2,76 @@
 {% load static %}
 
 {% block title %}ChemVisualizer | Про нас{% endblock %}
+{% block head %}
+<style>
+    .text {
+        margin-top: 30px;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        margin-right: 30px;
+        border-radius: 10px;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #f0f0f0;
+    }
+
+    .text h2 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+
+    .text h3 {
+        font-size: 1.5em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .text ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    .text ul li {
+        margin-bottom: 10px;
+    }
+</style>
+{% endblock %}
 
 {% block body %}
+<div class="text">
+    <h2>Опис проєкту ChemVisualizer</h2>
+
+    <p><strong>ChemVisualizer</strong> — це потужний веб-інструмент для хімічних досліджень, що дозволяє
+        <strong>генерувати
+            та візуалізувати молекули в 3D форматі</strong>. Використовуючи SMILES-коди або
+        назви
+        молекул, користувачі можуть легко отримувати точні графічні зображення молекул, а також досліджувати їх
+        структуру в
+        інтерактивному 3D середовищі.
+    </p>
+
+    <p>Цей проєкт орієнтований на <strong>вчених, учнів, студентів та хіміків</strong>, які займаються хімічними дослідженнями
+        або
+        освітою. <strong>ChemVisualizer</strong> дозволяє не тільки візуалізувати молекули, але й взаємодіяти з ними,
+        обертати та масштабувати структури для кращого розуміння просторового розташування атомів та зв’язків.</p>
+
+    <h3>Ключові можливості:</h3>
+    <ul>
+        <li><strong>Інтерактивна 3D-візуалізація</strong> молекул за допомогою потужних бібліотек, таких як
+            <strong>3Dmol.js</strong>.
+        </li>
+        <li>Генерація <strong>3D-зображень молекул</strong> для використання в навчальних матеріалах та наукових
+            роботах.
+        </li>
+        <li><strong>Підтримка різних форматів введення</strong>, включаючи SMILES.
+        </li>
+        <li><strong>Автоматичне отримання даних</strong> про молекули з відкритих хімічних баз даних (наприклад,
+            PubChem).
+        </li>
+    </ul>
+
+    <p><strong>ChemVisualizer</strong> дає змогу вивчати молекули на глибшому рівні та робить цей процес більш зручним і
+        доступним.</p>
+</div>
 
 {% endblock %}
