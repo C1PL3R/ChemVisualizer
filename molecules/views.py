@@ -48,7 +48,6 @@ def molecule_view(request):
         
         for compound in results:
                 smiles = compound.isomeric_smiles
-    print(name, smiles)
     
     mol = Chem.MolFromSmiles(smiles)
     mol = Chem.AddHs(mol)
