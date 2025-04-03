@@ -22,18 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-import os
-from dotenv import load_dotenv
-
-load_dotenv()  # Завантажує змінні з .env
-
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = "django-insecure-!6alrba$)s%=k$5xm)oolyciag7)_4o5*srfu19)b&0li2w&5n"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 #DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'chemvisualizer.pythonanywhere.com']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
