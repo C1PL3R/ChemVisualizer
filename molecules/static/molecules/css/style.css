@@ -52,11 +52,12 @@ h1 {
 }
 
 .content {
+    align-items: center;
     grid-area: main;
     width: 100%;
     height: 100vh;
     text-align: left;
-    padding-left: 100px;
+    padding-left: 50px;
     /* Відступ для коректного відображення поряд з сайдбаром */
 }
 
@@ -293,16 +294,23 @@ h1 {
 }
 
 .inputElements {
-    display: grid;
-    justify-content: start;
-    align-items: start;
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    flex-wrap: wrap;
+    align-items: flex-end;
     gap: 20px;
-    position: relative;
-    width: 100%;
 }
 
 .inputElements button a {
     color: black;
+}
+
+.inputElements button{
+    min-width: 200px;
+    flex-grow: 1;
+    flex-basis: 200;
+    font-size: clamp(15px, 0.3043rem + 3.4783vw, 16px);
 }
 
 #nameOfSubstance,
@@ -345,28 +353,9 @@ h1 {
 }
 
 #nameOfSubstanceButton {
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
-.history-container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.history-container::before,
-.history-container::after {
-    content: '';
-    flex: 1;
-    border-top: 1px solid rgb(255, 255, 255);
-    margin: 0 10px;
-}
-
-.history-container span {
-    white-space: nowrap;
-}
 
 #History-text {
     color: white;
@@ -408,4 +397,97 @@ footer a {
 button:hover{
     text-decoration: underline;
     cursor: pointer;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    font-family: monospace;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.divider a {
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.divider a:hover {
+    scale: 1.1;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ffffff;
+}
+
+.divider::before {
+    margin-right: 10px;
+}
+
+.divider::after {
+    margin-left: 10px;
+}
+
+.history-page-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.history-page-container{
+    flex-grow: 1;
+    flex-basis: 200;
+    gap: 20px;
+}
+
+#create-history, #log-in, #history-is-epmty{
+    width: 70%;
+    height: 70vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    position: fixed;
+    left: 20%;
+    top: 20%;
+}
+
+.history-container {
+    width: calc(100% - 20px);
+    display: flex;
+    justify-content: space-between; /* Використовуємо space-between або space-around */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Встановлюємо gap тут, для відступів між елементами */
+}
+
+.element {
+    color: #a6a6d8;
+    background-color: #31315a;
+    border-radius: 10px;
+    width: calc(33.33% - 20px); /* Три елементи в ряд */
+    padding: 10px;
+    flex-grow: 0; /* Не даємо елементу рости */
+    flex-basis: auto; /* Забираємо flex-basis, оскільки width вже встановлено */
+    cursor: pointer;
+}
+
+.date{
+    color: #707090;
+}
+
+.nameOfMol{
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.nameOfMol:hover{
+    color: white;
+    text-decoration: underline;
 }

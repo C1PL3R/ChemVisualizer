@@ -13,86 +13,51 @@ function getCookie(name) {
   return cookieValue;
 }
 
-// function sendMoleculeRequest(smiles) {
-//   fetch(window.location.origin + "/from-name-molecule-get-smiles/", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//       'X-CSRFToken': getCookie('csrftoken'),
-//     },
-//     body: JSON.stringify({ name: smiles.trim() }), // Виправлено ключ
-//   })
-//     .then((response) => {
-//       if (!response.ok) {
-//         throw new Error(`HTTP Error! Status: ${response.status}`);
-//       }
-//       return response.json();
-//     })
-//     .then((data) => {
-//       if (data.status === "success") {
-//         console.log(data.smiles);
-//         var link = document.getElementById("moleculeLinkName");
+function generateExpires(days) {
+  const date = new Date();
+  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+  return "; expires=" + date.toUTCString();
+}
 
-//         link.href = `view_molecule/${data.name}/${data.smiles}`;
-//         link.style.display = "flex";
+function setCookie(name, smiles, days) {
+  const expires = days ? generateExpires(days) : "";
 
-//       } else {
-//         console.error(`Помилка сервера: ${data.error}`);
-//       }
-//     })
-//     .catch((error) => {
-//       console.error("Помилка запиту:", error.message);
-//       alert("Введіть назву речовини коректно!"); // Виведе сповіщення
-//     });
-// }
-
-function SendNameAndSmiles() {
-  let nameInput = document.getElementById("inputName");
-  let smilesInput = document.getElementById("inputSmiles");
-  let link = "";
-
-  let name = nameInput.value.trim();
-  let smiles = smilesInput.value.trim();
-
-  if (!name && !smiles) {
-    console.error("Помилка: поле введення порожнє!");
-    alert("Будь ласка, введіть коректно назву молекули aбо smiles-код!");
+  if (name && smiles) {
+    alert('Введіть або назву речовини, або smiles, але не обидва!');
     return;
   }
 
-  function setCookie(name, smiles, days) {
-    let expires = "";
+  if (!name && smiles) {
+    CheckSmilesCode(smiles, expires);
+  } else if (name && !smiles) {
+    document.cookie = `moleculeName=${name}${expires}; path=/`;
+    const link = document.getElementById("moleculeLinkName");
+    link.href = window.location.origin + '/view_molecule/';
+    link.style.display = "flex";
+  } else {
+    alert('Введіть хоча б одне значення — назву речовини або smiles!');
+  }
+}
 
-    if (days) {
-      const date = new Date();
-      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Додаємо час життя у мілісекундах
-      expires = "; expires=" + date.toUTCString();
-    }
+function SendNameAndSmiles() {
+  const nameInput = document.getElementById("inputName");
+  const smilesInput = document.getElementById("inputSmiles");
 
-    if (name && smiles) {
-      alert('Впишіть або назву речовини або smiles!')
-    } else if (!name && smiles) {
-      document.cookie = `moleculeSmiles=${smiles}${expires}; path=/`;
-      link = document.getElementById("moleculeLinkSmileCode");
-    } else if (name && !smiles) {
-      document.cookie = `moleculeName=${name}${expires}; path=/`;
-      link = document.getElementById("moleculeLinkName");
-    } else {
-      alert('Впишіть або назву речовини або smiles!')
-    }
+  const name = nameInput.value.trim();
+  const smiles = smilesInput.value.trim();
+
+  if (!name && !smiles) {
+    console.error("Помилка: поле введення порожнє!");
+    alert("Будь ласка, введіть коректно назву молекули або smiles-код!");
+    return;
   }
 
   setCookie(name, smiles, 2);
-  link.href = window.location.origin + '/view_molecule/';
-  link.style.display = "flex";
+
   nameInput.value = "";
   smilesInput.value = "";
 }
-
-
-function GenerationSmilesCode() {
-  let smiles = document.getElementById("inputSmiles").value;
-
+function CheckSmilesCode(smiles, expires) {
   if (!smiles) {
     alert("Будь ласка, введіть smiles-код молекули!");
     return;
@@ -104,27 +69,33 @@ function GenerationSmilesCode() {
       "Content-Type": "application/json",
       'X-CSRFToken': getCookie('csrftoken'),
     },
-    body: JSON.stringify({ smiles: smiles }), // Виправлено ключ
+    body: JSON.stringify({ smiles: smiles }),
   })
     .then((response) => {
-      if (!response.ok) {
+      if (!response.ok) { // Якщо статус не ОК, викидаємо помилку
         throw new Error(`HTTP Error! Status: ${response.status}`);
       }
-      return response.json();
+      return response.json(); // Отримуємо JSON-дані
     })
     .then((data) => {
       if (data.status === "success") {
-        var link = document.getElementById("moleculeLinkSmileCode");
-
-        link.href = `view_molecule-smiles/${smiles}`;
+        document.cookie = `moleculeSmiles=${smiles}${expires}; path=/`;
+        const link = document.getElementById("moleculeLinkSmileCode");
+        link.href = window.location.origin + '/view_molecule/';
         link.style.display = "flex";
-
-      } else {
-        console.error(`Помилка сервера: ${data.error}`);
       }
     })
     .catch((error) => {
-      console.error("Помилка запиту:", error.message);
-      alert("Введіть назву речовини коректно!"); // Виведе сповіщення
+      // Тут catch вже коректно обробляє будь-які помилки, які виникають у fetch
+      console.error("Помилка при запиті:", error.message); // Виводимо помилку в консоль
+      alert("Будь ласка, введіть правильний SMILES-код або зверніться до інших ресурсів для його правильного написання!"); // Виводимо повідомлення користувачу
     });
+}
+
+function OpenModel(name, smiles){
+	const expires = 7 ? generateExpires(7) : "";
+	document.cookie = `moleculeName=${name}${expires}; path=/`;
+	document.cookie = `moleculeSmiles=${smiles}${expires}; path=/`;
+
+	window.location.href = window.location.origin + '/view_molecule/'
 }

@@ -1,7 +1,15 @@
 {% extends "template.html" %}
 {% load static %}
 
-{% block title %}ChemVisualizer | {{ name }}{% endblock %}
+{% block title %}
+{% if name is none %}
+ChemVisualizer | Ви ввели SMILES-код
+{% else %}
+ChemVisualizer | {{ name }}
+{% endif %}
+{% endblock %}
+
+
 {% block head %}
 <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -23,16 +31,40 @@
 </script>
 
 <style>
-    #downloadBtn{
+    #downloadBtn {
         margin-top: 20px;
         z-index: 10;
+    }
+
+    .content {
+        align-items: center;
+        grid-area: main;
+        width: 100%;
+        height: 100vh;
+        text-align: left;
+        padding-left: 100px;
+        /* Відступ для коректного відображення поряд з сайдбаром */
+    }
+
+    #MainText{
+        width: 100%;
+        display: flex;
+        justify-content: left;
+        padding-left: 0px;
     }
 </style>
 {% endblock %}
 
 
 {% block body %}
-<h1 class="nameOfProject">ChemVisualizer</h1>
+<div id="MainText">
+    <h1>{% if name is none %}
+        ChemVisualizer
+        {% else %}
+        {{ name }}
+        {% endif %}
+    </h1>
+</div>
 <br>
 <div id="viewer"></div>
 
@@ -40,19 +72,29 @@
 
 <script>
     document.getElementById("downloadBtn").addEventListener("click", function () {
-        var Data = `{{ mol_block|escapejs }}`;
+        var molData = {
+            mol_block: `{{ mol_block|escapejs }}`,
+            style: {
+                stick: { radius: 0.07 },
+                sphere: { radius: 0.3 },
+                label: {
+                    fontSize: 18,
+                    fontColor: "black",
+                    backgroundColor: "white",
+                    backgroundOpacity: 0.0
+                },
+                backgroundColor: "white"
+            }
+        };
 
-        if (Data.trim()) {
-            var blob = new Blob([Data], { type: "text/plain" });
-            var link = document.createElement("a");
-            link.href = URL.createObjectURL(blob);
-            link.download = "molecule.mol";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        } else {
-            console.error("MOL дані порожні!");
-        }
+        var blob = new Blob([JSON.stringify(molData, null, 2)], { type: "application/json" });
+        var link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "molecule_with_style.json";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
     });
 </script>
 
@@ -70,14 +112,14 @@
             // Додаємо підписи атомів із зміщенням
             var atoms = viewer.getModel().selectedAtoms({});
             atoms.forEach(atom => {
-                    viewer.addLabel(atom.elem, {
-                        position: { x: atom.x, y: atom.y + 0.3, z: atom.z },
-                        fontSize: 18,
-                        fontColor: "black",
-                        backgroundColor: "white",  // Для перевірки можна поставити колір
-                        backgroundOpacity: 0.0      // Повна прозорість фону
-                    });
+                viewer.addLabel(atom.elem, {
+                    position: { x: atom.x, y: atom.y + 0.3, z: atom.z },
+                    fontSize: 18,
+                    fontColor: "black",
+                    backgroundColor: "white",  // Для перевірки можна поставити колір
+                    backgroundOpacity: 0.0      // Повна прозорість фону
                 });
+            });
             viewer.setBackgroundColor("white");
 
 

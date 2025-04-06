@@ -13,12 +13,12 @@
         Написати назву речовини
     </button>
     <button popovertarget="smilesOfSubstance">
-        Написати <a href="{% url 'what_are_smiles' %}">SMILES-код</a> речовини
+        Написати SMILES-код речовини
     </button>
 </div>
 
 <div id="nameOfSubstance" popover>
-    <input id="inputName" type="text" placeholder="Введіть назву речовини">
+    <input id="inputName" type="text" placeholder="Введіть назву речовини" maxlength="50">
     <button style="cursor: pointer;" onclick="SendNameAndSmiles()">Надіслати</button>
     <a id="moleculeLinkName" href="">Переглянути тут!</a>
 </div>
@@ -27,14 +27,28 @@
 <div id="smilesOfSubstance" popover>
     <h1><a style="color: white; cursor: pointer;" href="{% url 'what_are_smiles' %}">SMILES-код</a> який ви ввели не
         збережеться в історії!</h1>
-    <input id="inputSmiles" type="text" placeholder="Введіть smiles речовини">
+    <input oninput="this.value = this.value.toUpperCase()" id="inputSmiles" type="text"
+        placeholder="Введіть smiles речовини">
     <button style="cursor: pointer;" onclick="SendNameAndSmiles()">Надіслати</button>
     <a id="moleculeLinkSmileCode" href="">Переглянути тут!</a>
 </div>
 
-<!-- <div class="history-container">
-    <span id="History-text">Історія</span>
-</div> -->
+
+
+<div class="divider">
+    <span>Варіанти</span>
+</div>
+<div class="history-container">
+    {% for molecule in molecules_history %}
+    <div class="element" onclick="OpenModel(name='{{ molecule.name }}', smiles='{{ molecule.smiles }}')">
+        <span class="nameOfMol">{{ molecule.name }}</span>
+        <span class="date">{{ molecule.created_at }}</span>
+    </div>
+    {% empty %}
+    <p>Молекули не знайдено.</p>
+    {% endfor %}
+
+</div>
 
 <script src="{% static 'molecules/js/main.js' %}"></script>
 {% endblock %}
