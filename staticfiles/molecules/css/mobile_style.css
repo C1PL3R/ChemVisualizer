@@ -1,3 +1,12 @@
+@media (max-width: 768px) {
+    .element {
+        width: 100%;  /* 2 елементи в ряд на мобільних */
+    }
+    .date{
+        display: none;
+    }
+}
+
 @media(max-width: 768px) {
     body {
         background-size: contain;
@@ -17,9 +26,11 @@
         border-radius: 10px;
     }
 
+    .content{
+        padding-left: 30px;
+    }
+
     .inputElements {
-        position: relative;
-        left: -70px;
         z-index: 0;
     }
 
@@ -94,7 +105,7 @@
     #nameOfSubstance button,
     #smilesOfSubstance button {
         padding: 10px;
-        width: auto;
+        max-width: 200px;
         justify-content: center;
         font-size: 17px;
     }
@@ -127,7 +138,11 @@
         text-align: center;
     }
 
-    #moleculeLinkName{
-        width: 90%;
+    #moleculeLinkName, #moleculeLinkSmileCode{
+        width: 200px;
+        font-size: 18px;
+    }
+    #nameOfSubstanceButton {
+        margin-top: 0px;
     }
 }
