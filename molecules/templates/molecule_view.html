@@ -46,7 +46,7 @@ ChemVisualizer | {{ name }}
         /* Відступ для коректного відображення поряд з сайдбаром */
     }
 
-    #MainText{
+    #MainText {
         width: 100%;
         display: flex;
         justify-content: left;
@@ -72,29 +72,19 @@ ChemVisualizer | {{ name }}
 
 <script>
     document.getElementById("downloadBtn").addEventListener("click", function () {
-        var molData = {
-            mol_block: `{{ mol_block|escapejs }}`,
-            style: {
-                stick: { radius: 0.07 },
-                sphere: { radius: 0.3 },
-                label: {
-                    fontSize: 18,
-                    fontColor: "black",
-                    backgroundColor: "white",
-                    backgroundOpacity: 0.0
-                },
-                backgroundColor: "white"
-            }
-        };
+        var Data = `{{ mol_block|escapejs }}`;
 
-        var blob = new Blob([JSON.stringify(molData, null, 2)], { type: "application/json" });
-        var link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = "molecule_with_style.json";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
+        if (Data.trim()) {
+            var blob = new Blob([Data], { type: "text/plain" });
+            var link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "molecule.mol";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } else {
+            console.error("MOL дані порожні!");
+        }
     });
 </script>
 
