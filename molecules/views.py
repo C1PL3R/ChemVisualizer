@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rdkit import Chem
-from rdkit.Chem import AllChem
+from rdkit.Chem import AllChem, rdmolfiles
 import py3Dmol
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -10,19 +10,6 @@ from .serializer import MoluculeSerializer
 from .models import Molucule
 from rest_framework import viewsets
 from django.contrib import messages
-
-
-viewer_size = {'width': 1000, 'height': 600}  # Значення за замовчуванням
-
-
-@csrf_exempt
-def set_viewer_size(request):
-    global viewer_size
-    if request.method == 'POST':
-        data = json.loads(request.body)
-        viewer_size['width'] = int(data.get('width', 1000))
-        viewer_size['height'] = int(data.get('height', 600))
-    return JsonResponse({'status': 'success'})
 
 
 def index(request):
@@ -39,10 +26,6 @@ def what_are_smiles(request):
 
 
 def molecule_view(request):
-    global viewer_size
-    width = viewer_size["width"]
-    height = viewer_size["height"]
-
     name = request.COOKIES.get('moleculeName')
     smiles = request.COOKIES.get('moleculeSmiles')
 
@@ -63,27 +46,15 @@ def molecule_view(request):
     # Генеруємо 3D координати
     AllChem.EmbedMolecule(mol)
     block = Chem.MolToMolBlock(mol)
-
-    # Візуалізація молекули
-    viewer = py3Dmol.view(width=width, height=height)
-    viewer.addModel(block, "mol")
-
-    # Стиль молекули
-    viewer.setStyle({'stick': {}})  # Відображаємо молекулу як стіки
-
-    # Фоновий колір і зум
-    viewer.setBackgroundColor('white')
-    viewer.zoomTo()
-    viewer.render()
     
     try:
         if name and name.strip():
-            created = Molucule.objects.get_or_create(name=str(name).capitalize, smiles=smiles)
+            Molucule.objects.get_or_create(name=str(name).capitalize, smiles=smiles)
     except Exception as e:
         print(f"Error creating molecule: {e}")
 
     response = render(request, 'molecule_view.html', {
-                      'mol_block': block, 'viewer': viewer, 'name': name})
+                      'mol_block': block, 'name': name})
     response.delete_cookie('moleculeName', path='/')
     response.delete_cookie('moleculeSmiles', path='/')
     return response

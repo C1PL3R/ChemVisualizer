@@ -2,123 +2,44 @@
 {% load static %}
 
 {% block title %}
-{% if name is none %}
-ChemVisualizer | Ви ввели SMILES-код
-{% else %}
-ChemVisualizer | {{ name }}
-{% endif %}
+    {% if name is none %}
+    ChemVisualizer | Ви ввели SMILES-код
+    {% else %}
+    ChemVisualizer | {{ name }}
+    {% endif %}
 {% endblock %}
 
-
 {% block head %}
-<script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/STLLoader.js"></script>
-<script>
-    function sendScreenSize() {
-        let width = Math.min(window.innerWidth * 0.9, 1000); // 90% ширини екрану
-        let height = Math.min(window.innerHeight * 0.5, 600); // 50% висоти
-
-        fetch('/set_viewer_size/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ width: width, height: height })
-        });
-    }
-
-    window.onload = sendScreenSize; // Виконуємо після завантаження сторінки
-    window.onresize = sendScreenSize; // Виконуємо при зміні розміру вікна
-</script>
-
-<style>
-    #downloadBtn {
-        margin-top: 20px;
-        z-index: 10;
-    }
-
-    .content {
-        align-items: center;
-        grid-area: main;
-        width: 100%;
-        height: 100vh;
-        text-align: left;
-        padding-left: 100px;
-        /* Відступ для коректного відображення поряд з сайдбаром */
-    }
-
-    #MainText {
-        width: 100%;
-        display: flex;
-        justify-content: left;
-        padding-left: 0px;
-    }
-</style>
+    <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+    <link rel="stylesheet" href="{% static 'molecules/css/molecule_page.css' %}">
 {% endblock %}
 
 
 {% block body %}
-<div id="MainText">
-    <h1>{% if name is none %}
-        ChemVisualizer
-        {% else %}
-        {{ name }}
-        {% endif %}
-    </h1>
-</div>
-<br>
-<div id="viewer"></div>
+    <div class="view_molecule">
+        <div id="MainText">
+            <h1>{% if name is none %}
+                ChemVisualizer
+                {% else %}
+                {{ name }}
+                {% endif %}
+            </h1>
+        </div>
+        <div class="buttons">
+            <button id="openFullscreenBtn" onclick="openFullscreen()">Відкрити на весь екран</button>
+            <button style="z-index: 0;" id="downloadBtn">Завантажити 3D модель</button>
+        </div>
+        
+        <br>
 
-<button id="downloadBtn">Завантажити 3D модель</button>
+        <div id="viewer">
+            <span style="width: 100%; position: absolute; top: 10px; z-index: 1; color: black; font-size: 20px; text-align: center;">ChemVisualizer | {{name}}</span>
+        </div>
+    </div>
 
-<script>
-    document.getElementById("downloadBtn").addEventListener("click", function () {
-        var Data = `{{ mol_block|escapejs }}`;
+    <span id="molecule" style='display: none;'>{{ mol_block }}</span>
 
-        if (Data.trim()) {
-            var blob = new Blob([Data], { type: "text/plain" });
-            var link = document.createElement("a");
-            link.href = URL.createObjectURL(blob);
-            link.download = "molecule.mol";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        } else {
-            console.error("MOL дані порожні!");
-        }
-    });
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var molBlock = `{{ mol_block|escapejs }}`;
-
-        if (molBlock.trim()) {
-            var viewer = $3Dmol.createViewer("viewer", { backgroundColor: "transparent" });
-            viewer.addModel(molBlock, "sdf");
-
-            // Тонкі зв'язки та невеликі сфери
-            viewer.setStyle({}, { stick: { radius: 0.07 }, sphere: { radius: 0.3 } });
-
-            // Додаємо підписи атомів із зміщенням
-            var atoms = viewer.getModel().selectedAtoms({});
-            atoms.forEach(atom => {
-                viewer.addLabel(atom.elem, {
-                    position: { x: atom.x, y: atom.y + 0.3, z: atom.z },
-                    fontSize: 18,
-                    fontColor: "black",
-                    backgroundColor: "white",  // Для перевірки можна поставити колір
-                    backgroundOpacity: 0.0      // Повна прозорість фону
-                });
-            });
-            viewer.setBackgroundColor("white");
-
-
-            viewer.zoomTo();
-            viewer.render();
-        } else {
-            console.error("MolBlock порожній або не був переданий.");
-        }
-    });
-
-</script>
+    <script src="{% static 'molecules/js/molecule_view.js' %}"></script>
 {% endblock %}

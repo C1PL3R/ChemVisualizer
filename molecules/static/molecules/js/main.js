@@ -99,3 +99,4 @@ function OpenModel(name, smiles){
 
 	window.location.href = window.location.origin + '/view_molecule/'
 }
+

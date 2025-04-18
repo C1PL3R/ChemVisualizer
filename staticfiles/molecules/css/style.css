@@ -3,13 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Fira Code";
-}
-
-
-#viewer {
-    width: 1300px;
-    height: 600px;
-    position: relative;
+    color-scheme: #4651ca;
 }
 
 h1 {
@@ -55,10 +49,8 @@ h1 {
     align-items: center;
     grid-area: main;
     width: 100%;
-    height: 100vh;
     text-align: left;
     padding-left: 50px;
-    /* Відступ для коректного відображення поряд з сайдбаром */
 }
 
 .main_container {
@@ -476,6 +468,12 @@ button:hover{
     flex-grow: 0; /* Не даємо елементу рости */
     flex-basis: auto; /* Забираємо flex-basis, оскільки width вже встановлено */
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.element:hover{
+    background-color: #a6a6d8;
+    color: #333383;
 }
 
 .date{

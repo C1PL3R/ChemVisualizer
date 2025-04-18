@@ -1,8 +1,10 @@
 @media (max-width: 768px) {
     .element {
-        width: 100%;  /* 2 елементи в ряд на мобільних */
+        width: 100%;
+        /* 2 елементи в ряд на мобільних */
     }
-    .date{
+
+    .date {
         display: none;
     }
 }
@@ -27,7 +29,20 @@
     }
 
     .content{
-        padding-left: 30px;
+        width: 100%;
+        margin-left: 50px;
+    }
+
+    #openFullscreenBtn{
+        margin-top: 10px;
+    }
+
+    .main_container {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-areas: "menu main";
+        height: 100vh;
+        z-index: 10;
     }
 
     .inputElements {
@@ -46,10 +61,36 @@
         margin-left: -70px;
     }
 
+    #undefined{
+        width: 260px;
+        height: 100px;
+    }
+
     #viewer {
-        width: 360px;
-        margin-left: -70px;
-        margin-right: 10px;
+        width: 160px;
+        height: 100px;
+        position: relative;
+    }
+
+    .buttons{
+        display: flex;
+        width: 400px;
+        flex-wrap: wrap;
+    }
+
+    #downloadBtn{
+        z-index: 0;
+    }
+
+    .buttons button{
+        padding: 5px;
+        flex-basis: 200;
+        z-index: 0;
+    }
+
+    .view_molecule{
+        position: relative;
+        left: -50px;
     }
 
     #moleculeLink {
@@ -133,15 +174,17 @@
         font-size: 15px;
     }
 
-    .text .main_text{
+    .text .main_text {
         font-size: 17px;
         text-align: center;
     }
 
-    #moleculeLinkName, #moleculeLinkSmileCode{
+    #moleculeLinkName,
+    #moleculeLinkSmileCode {
         width: 200px;
         font-size: 18px;
     }
+
     #nameOfSubstanceButton {
         margin-top: 0px;
     }
