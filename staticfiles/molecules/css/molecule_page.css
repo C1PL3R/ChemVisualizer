@@ -31,3 +31,25 @@
     position: relative;
     cursor: all-scroll;
 }
+
+.data_about_molecule {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* розміщення елементів у стовпчик */
+    gap: 10px; /* проміжок між елементами, за бажанням */
+}
+
+.data_about_molecule span{
+    color: white;
+    font-size: 20px;
+}
+
+.data_about_molecule h1{
+    color: white;
+    font-size: 20px;
+}
+
+.add_info,
+.data_about_molecule a{
+    color: rgb(201, 201, 201);
+}

@@ -66,10 +66,17 @@
         height: 100px;
     }
 
-    #viewer {
-        width: 160px;
+    #viewer canvas {
+        width: 500px;
         height: 100px;
+    }
+    
+    #viewer {
+        width: 500px;
+        height: 300px;
         position: relative;
+        cursor: all-scroll;
+        z-index: 5;
     }
 
     .buttons{
@@ -93,13 +100,13 @@
         left: -50px;
     }
 
-    #moleculeLink {
+    #moleculeLinkFormula,
+    #moleculeLinkName {
         display: none;
         text-decoration: none;
         color: #31315a;
         background-color: #a6a6d8;
         margin-top: 20px;
-        margin-left: -70px;
         font-size: 20px;
         width: 250px;
         text-align: center;
@@ -119,14 +126,11 @@
     }
 
     #nameOfSubstance,
-    #smilesOfSubstance {
-        width: 270px;
+    #formulaOfSubstance {
+        width: 670px;
         padding: 20px;
         border: none;
         background-color: rgba(0, 0, 0, 0.5);
-        position: relative;
-        top: 40%;
-        left: 30%;
         border-radius: 10px;
         font-size: 15px;
         z-index: 5;
@@ -134,17 +138,17 @@
     }
 
     #nameOfSubstance input,
-    #smilesOfSubstance input {
+    #formulaOfSubstance input {
         width: 230px;
         margin-bottom: 20px;
     }
 
-    #smilesOfSubstance input {
+    #formulaOfSubstance input {
         margin-top: 10px;
     }
 
     #nameOfSubstance button,
-    #smilesOfSubstance button {
+    #formulaOfSubstance button {
         padding: 10px;
         max-width: 200px;
         justify-content: center;
@@ -177,12 +181,6 @@
     .text .main_text {
         font-size: 17px;
         text-align: center;
-    }
-
-    #moleculeLinkName,
-    #moleculeLinkSmileCode {
-        width: 200px;
-        font-size: 18px;
     }
 
     #nameOfSubstanceButton {
