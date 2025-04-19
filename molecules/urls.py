@@ -18,5 +18,6 @@ urlpatterns = [
     path('view_molecule/', views.molecule_view, name='view_molecule'),
     path('about/', views.about, name='about'),
     path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),
-    path('check-smiles-code/', views.check_smiles_code, name='check_smiles_code'),
+    path('send-formula/', views.send_formula, name='send_formula'),
+    path('send-name/', views.send_name, name='send-name')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

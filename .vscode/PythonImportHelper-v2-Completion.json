@@ -41,14 +41,6 @@
         "documentation": {}
     },
     {
-        "label": "messages",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -209,14 +201,6 @@
         "documentation": {}
     },
     {
-        "label": "Chem",
-        "importPath": "rdkit",
-        "description": "rdkit",
-        "isExtraImport": true,
-        "detail": "rdkit",
-        "documentation": {}
-    },
-    {
         "label": "AllChem",
         "importPath": "rdkit.Chem",
         "description": "rdkit.Chem",
@@ -226,14 +210,6 @@
     },
     {
         "label": "rdmolfiles",
-        "importPath": "rdkit.Chem",
-        "description": "rdkit.Chem",
-        "isExtraImport": true,
-        "detail": "rdkit.Chem",
-        "documentation": {}
-    },
-    {
-        "label": "AllChem",
         "importPath": "rdkit.Chem",
         "description": "rdkit.Chem",
         "isExtraImport": true,
@@ -251,6 +227,14 @@
     },
     {
         "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -290,32 +274,6 @@
         "importPath": "sys",
         "description": "sys",
         "detail": "sys",
-        "documentation": {}
-    },
-    {
-        "label": "trimesh",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "trimesh",
-        "description": "trimesh",
-        "detail": "trimesh",
-        "documentation": {}
-    },
-    {
-        "label": "numpy",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "numpy",
-        "description": "numpy",
-        "detail": "numpy",
-        "documentation": {}
-    },
-    {
-        "label": "Mol",
-        "importPath": "rdkit.Chem.rdchem",
-        "description": "rdkit.Chem.rdchem",
-        "isExtraImport": true,
-        "detail": "rdkit.Chem.rdchem",
         "documentation": {}
     },
     {
@@ -584,7 +542,7 @@
         "kind": 5,
         "importPath": "molecules.urls",
         "description": "molecules.urls",
-        "peekOfCode": "handler404 = 'your_project.views.custom_page_not_found'\nhandler500 = 'your_project.views.custom_error_view'\nrouter = routers.DefaultRouter()\nrouter.register(r'molecule-history', MoluculeAPIView, basename='molecule-history')\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('check-smiles-code/', views.check_smiles_code, name='check_smiles_code'),",
+        "peekOfCode": "handler404 = 'your_project.views.custom_page_not_found'\nhandler500 = 'your_project.views.custom_error_view'\nrouter = routers.DefaultRouter()\nrouter.register(r'molecule-history', MoluculeAPIView, basename='molecule-history')\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('send-formula/', views.send_formula, name='send_formula'),",
         "detail": "molecules.urls",
         "documentation": {}
     },
@@ -593,7 +551,7 @@
         "kind": 5,
         "importPath": "molecules.urls",
         "description": "molecules.urls",
-        "peekOfCode": "handler500 = 'your_project.views.custom_error_view'\nrouter = routers.DefaultRouter()\nrouter.register(r'molecule-history', MoluculeAPIView, basename='molecule-history')\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('check-smiles-code/', views.check_smiles_code, name='check_smiles_code'),\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
+        "peekOfCode": "handler500 = 'your_project.views.custom_error_view'\nrouter = routers.DefaultRouter()\nrouter.register(r'molecule-history', MoluculeAPIView, basename='molecule-history')\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('send-formula/', views.send_formula, name='send_formula'),\n    path('send-name/', views.send_name, name='send-name')",
         "detail": "molecules.urls",
         "documentation": {}
     },
@@ -602,7 +560,7 @@
         "kind": 5,
         "importPath": "molecules.urls",
         "description": "molecules.urls",
-        "peekOfCode": "router = routers.DefaultRouter()\nrouter.register(r'molecule-history', MoluculeAPIView, basename='molecule-history')\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('check-smiles-code/', views.check_smiles_code, name='check_smiles_code'),\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
+        "peekOfCode": "router = routers.DefaultRouter()\nrouter.register(r'molecule-history', MoluculeAPIView, basename='molecule-history')\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('send-formula/', views.send_formula, name='send_formula'),\n    path('send-name/', views.send_name, name='send-name')\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
         "detail": "molecules.urls",
         "documentation": {}
     },
@@ -611,7 +569,7 @@
         "kind": 5,
         "importPath": "molecules.urls",
         "description": "molecules.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('check-smiles-code/', views.check_smiles_code, name='check_smiles_code'),\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('send-formula/', views.send_formula, name='send_formula'),\n    path('send-name/', views.send_name, name='send-name')\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
         "detail": "molecules.urls",
         "documentation": {}
     },
@@ -638,7 +596,7 @@
         "kind": 2,
         "importPath": "molecules.views",
         "description": "molecules.views",
-        "peekOfCode": "def about(request):\n    return render(request, 'about.html')\ndef what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request):\n    name = request.COOKIES.get('moleculeName')\n    smiles = request.COOKIES.get('moleculeSmiles')\n    if smiles is None or smiles == \"\":\n        def get_compounds_by_formula(formula):\n            compounds = pcp.get_compounds(formula, 'name')",
+        "peekOfCode": "def about(request):\n    return render(request, 'about.html')\ndef what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request):\n    name = request.COOKIES.get('moleculeName')\n    smiles = request.COOKIES.get('moleculeSmiles')\n    results = pcp.get_compounds(name, 'name')\n    if results:\n        compound = results[0]",
         "detail": "molecules.views",
         "documentation": {}
     },
@@ -647,7 +605,7 @@
         "kind": 2,
         "importPath": "molecules.views",
         "description": "molecules.views",
-        "peekOfCode": "def what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request):\n    name = request.COOKIES.get('moleculeName')\n    smiles = request.COOKIES.get('moleculeSmiles')\n    if smiles is None or smiles == \"\":\n        def get_compounds_by_formula(formula):\n            compounds = pcp.get_compounds(formula, 'name')\n            return compounds\n        results = get_compounds_by_formula(name)",
+        "peekOfCode": "def what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request):\n    name = request.COOKIES.get('moleculeName')\n    smiles = request.COOKIES.get('moleculeSmiles')\n    results = pcp.get_compounds(name, 'name')\n    if results:\n        compound = results[0]\n        smiles = compound.isomeric_smiles\n        molecular_formula = compound.molecular_formula",
         "detail": "molecules.views",
         "documentation": {}
     },
@@ -656,16 +614,25 @@
         "kind": 2,
         "importPath": "molecules.views",
         "description": "molecules.views",
-        "peekOfCode": "def molecule_view(request):\n    name = request.COOKIES.get('moleculeName')\n    smiles = request.COOKIES.get('moleculeSmiles')\n    if smiles is None or smiles == \"\":\n        def get_compounds_by_formula(formula):\n            compounds = pcp.get_compounds(formula, 'name')\n            return compounds\n        results = get_compounds_by_formula(name)\n        for compound in results:\n            smiles = compound.isomeric_smiles",
+        "peekOfCode": "def molecule_view(request):\n    name = request.COOKIES.get('moleculeName')\n    smiles = request.COOKIES.get('moleculeSmiles')\n    results = pcp.get_compounds(name, 'name')\n    if results:\n        compound = results[0]\n        smiles = compound.isomeric_smiles\n        molecular_formula = compound.molecular_formula\n        molecular_weight = compound.molecular_weight\n        exact_mass = compound.exact_mass",
         "detail": "molecules.views",
         "documentation": {}
     },
     {
-        "label": "check_smiles_code",
+        "label": "send_name",
         "kind": 2,
         "importPath": "molecules.views",
         "description": "molecules.views",
-        "peekOfCode": "def check_smiles_code(request):\n    if request.method == 'POST':\n        try:\n            data = json.loads(request.body)\n            smiles = data.get(\"smiles\")\n            if not smiles or smiles.strip() == \"\":\n                return JsonResponse({'status': 'fail', 'error': 'SMILES code is empty!'}, status=400)\n            def is_valid_smiles(smiles):\n                mol = Chem.MolFromSmiles(smiles)\n                return mol is not None",
+        "peekOfCode": "def send_name(request):\n    if request.method == 'POST':\n        try:\n            data = json.loads(request.body)\n            name = data.get(\"name\")\n            results = pcp.get_compounds(name, 'name')\n            if results:\n                compound = results[0]\n                smiles = compound.isomeric_smiles\n                return JsonResponse({'status': 'success', 'name': name, 'smiles': smiles})",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "send_formula",
+        "kind": 2,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "def send_formula(request):\n    if request.method == 'POST':\n        try:\n            data = json.loads(request.body)\n            formula = data.get(\"formula\")\n            results = pcp.get_compounds(formula, namespace='formula')\n            if results:\n                compound = results[0]\n                smiles = compound.isomeric_smiles\n                name = compound.synonyms[0]",
         "detail": "molecules.views",
         "documentation": {}
     },
@@ -688,6 +655,51 @@
         "documentation": {}
     },
     {
+        "label": "molecular_formula",
+        "kind": 5,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "molecular_formula = None\nmolecular_weight = None\niupac_name = None\nimage_url = None\nelements = None\ndef index(request):\n    molucules = Molucule.objects.all()\n    return render(request, 'index.html', {'molecules_history': molucules})\ndef about(request):\n    return render(request, 'about.html')",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "molecular_weight",
+        "kind": 5,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "molecular_weight = None\niupac_name = None\nimage_url = None\nelements = None\ndef index(request):\n    molucules = Molucule.objects.all()\n    return render(request, 'index.html', {'molecules_history': molucules})\ndef about(request):\n    return render(request, 'about.html')\ndef what_are_smiles(request):",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "iupac_name",
+        "kind": 5,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "iupac_name = None\nimage_url = None\nelements = None\ndef index(request):\n    molucules = Molucule.objects.all()\n    return render(request, 'index.html', {'molecules_history': molucules})\ndef about(request):\n    return render(request, 'about.html')\ndef what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "image_url",
+        "kind": 5,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "image_url = None\nelements = None\ndef index(request):\n    molucules = Molucule.objects.all()\n    return render(request, 'index.html', {'molecules_history': molucules})\ndef about(request):\n    return render(request, 'about.html')\ndef what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request):",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "elements",
+        "kind": 5,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "elements = None\ndef index(request):\n    molucules = Molucule.objects.all()\n    return render(request, 'index.html', {'molecules_history': molucules})\ndef about(request):\n    return render(request, 'about.html')\ndef what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request):\n    name = request.COOKIES.get('moleculeName')",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
         "label": "main",
         "kind": 2,
         "importPath": "manage",
@@ -697,20 +709,20 @@
         "documentation": {}
     },
     {
-        "label": "mol_to_mesh",
+        "label": "get_compounds_by_formula",
         "kind": 2,
         "importPath": "test",
         "description": "test",
-        "peekOfCode": "def mol_to_mesh(mol: Mol):\n    mol = Chem.AddHs(mol)\n    AllChem.EmbedMolecule(mol, AllChem.ETKDG())\n    conf = mol.GetConformer()\n    vertices = [list(conf.GetAtomPosition(i)) for i in range(mol.GetNumAtoms())]\n    faces = []\n    for bond in mol.GetBonds():\n        i, j = bond.GetBeginAtomIdx(), bond.GetEndAtomIdx()\n        faces.append([i, j, (i + j) % mol.GetNumAtoms()])\n    return trimesh.Trimesh(vertices=np.array(vertices), faces=np.array(faces))",
+        "peekOfCode": "def get_compounds_by_formula(formula):\n    return pcp.get_compounds(formula, namespace='formula')\nresults = get_compounds_by_formula('RaSO4')\nif results:\n    compound = results[0]\n    smiles = compound.isomeric_smiles\n    molecular_formula = compound.molecular_formula\n    molecular_weight = compound.molecular_weight\n    exact_mass = compound.exact_mass\n    iupac_name = compound.iupac_name",
         "detail": "test",
         "documentation": {}
     },
     {
-        "label": "convert_mol_to_stl",
-        "kind": 2,
+        "label": "results",
+        "kind": 5,
         "importPath": "test",
         "description": "test",
-        "peekOfCode": "def convert_mol_to_stl(mol_file: str, stl_file: str):\n    mol = Chem.MolFromMolFile(mol_file)\n    if not mol:\n        raise ValueError(\"Не вдалося завантажити .mol файл\")\n    mesh = mol_to_mesh(mol)\n    mesh.export(stl_file)\n    print(f\"Файл {stl_file} успішно створено!\")\nif __name__ == \"__main__\":\n    if len(sys.argv) != 3:\n        print(\"Використання: python script.py input.mol output.stl\")",
+        "peekOfCode": "results = get_compounds_by_formula('RaSO4')\nif results:\n    compound = results[0]\n    smiles = compound.isomeric_smiles\n    molecular_formula = compound.molecular_formula\n    molecular_weight = compound.molecular_weight\n    exact_mass = compound.exact_mass\n    iupac_name = compound.iupac_name\n    isomeric_smiles = compound.isomeric_smiles\n    aids = compound.aids if compound.aids else []",
         "detail": "test",
         "documentation": {}
     }

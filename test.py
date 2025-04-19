@@ -1,39 +1,30 @@
-import sys
-import trimesh
-import numpy as np
-from rdkit import Chem
-from rdkit.Chem import AllChem
-from rdkit.Chem.rdchem import Mol
+import pubchempy as pcp
 
-def mol_to_mesh(mol: Mol):
-    mol = Chem.AddHs(mol)
-    AllChem.EmbedMolecule(mol, AllChem.ETKDG())
-    conf = mol.GetConformer()
-    
-    vertices = [list(conf.GetAtomPosition(i)) for i in range(mol.GetNumAtoms())]
-    faces = []
-    
-    for bond in mol.GetBonds():
-        i, j = bond.GetBeginAtomIdx(), bond.GetEndAtomIdx()
-        faces.append([i, j, (i + j) % mol.GetNumAtoms()])
-    
-    return trimesh.Trimesh(vertices=np.array(vertices), faces=np.array(faces))
+def get_compounds_by_formula(formula):
+    return pcp.get_compounds(formula, namespace='formula')
 
-def convert_mol_to_stl(mol_file: str, stl_file: str):
-    mol = Chem.MolFromMolFile(mol_file)
-    if not mol:
-        raise ValueError("Не вдалося завантажити .mol файл")
-    
-    mesh = mol_to_mesh(mol)
-    mesh.export(stl_file)
-    print(f"Файл {stl_file} успішно створено!")
+results = get_compounds_by_formula('RaSO4')
 
-if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Використання: python script.py input.mol output.stl")
-        sys.exit(1)
-    
-    input_mol = sys.argv[1]
-    output_stl = sys.argv[2]
-    
-    convert_mol_to_stl(input_mol, output_stl)
+if results:
+    compound = results[0]
+    smiles = compound.isomeric_smiles
+    molecular_formula = compound.molecular_formula
+    molecular_weight = compound.molecular_weight
+    exact_mass = compound.exact_mass
+    iupac_name = compound.iupac_name
+    isomeric_smiles = compound.isomeric_smiles
+    aids = compound.aids if compound.aids else []
+    sids = compound.sids if compound.sids else []
+    synonyms = compound.synonyms if compound.synonyms else []
+
+    print('Молекулярна формула:', molecular_formula)
+    print('Молекулярна маса:', molecular_weight)
+    print('SMILES:', isomeric_smiles)
+    print("IUPAC-ім'я:", iupac_name)
+    print('Точна маса:', exact_mass)
+    print('AIDs:', aids[:3])  # показати перші 3 AID
+    print('SIDs:', sids[:3])  # показати перші 3 SID
+    print('Синоніми:', synonyms[:3])  # показати перші 3 назви
+else:
+    print("Молекулу не знайдено.")
+

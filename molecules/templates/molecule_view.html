@@ -2,44 +2,66 @@
 {% load static %}
 
 {% block title %}
-    {% if name is none %}
-    ChemVisualizer | Ви ввели SMILES-код
-    {% else %}
-    ChemVisualizer | {{ name }}
-    {% endif %}
+{% if name is none %}
+ChemVisualizer | Ви ввели SMILES-код
+{% else %}
+ChemVisualizer | {{ name }}
+{% endif %}
 {% endblock %}
 
 {% block head %}
-    <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
-    <link rel="stylesheet" href="{% static 'molecules/css/molecule_page.css' %}">
+<script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+<link rel="stylesheet" href="{% static 'molecules/css/molecule_page.css' %}">
 {% endblock %}
 
 
 {% block body %}
-    <div class="view_molecule">
-        <div id="MainText">
-            <h1>{% if name is none %}
-                ChemVisualizer
-                {% else %}
-                {{ name }}
-                {% endif %}
-            </h1>
-        </div>
-        <div class="buttons">
-            <button id="openFullscreenBtn" onclick="openFullscreen()">Відкрити на весь екран</button>
-            <button style="z-index: 0;" id="downloadBtn">Завантажити 3D модель</button>
-        </div>
-        
-        <br>
-
-        <div id="viewer">
-            <span style="width: 100%; position: absolute; top: 10px; z-index: 1; color: black; font-size: 20px; text-align: center;">ChemVisualizer | {{name}}</span>
-        </div>
+<div class="view_molecule">
+    <div id="MainText">
+        <h1>{% if name is none %}
+            ChemVisualizer
+            {% else %}
+            {{ name }}
+            {% endif %}
+        </h1>
+    </div>
+    <div class="buttons">
+        <button id="openFullscreenBtn" onclick="openFullscreen()">Відкрити на весь екран</button>
+        <button style="z-index: 0;" id="downloadBtn">Завантажити 3D модель</button>
     </div>
 
-    <span id="molecule" style='display: none;'>{{ mol_block }}</span>
+    <br>
 
-    <script src="{% static 'molecules/js/molecule_view.js' %}"></script>
+    <div id="viewer">
+        <span
+            style="width: 100%; position: absolute; top: 10px; z-index: 1; color: black; font-size: 20px; text-align: center;">ChemVisualizer
+            | {{name}}</span>
+    </div>
+    
+    <div class="data_about_molecule">
+        <h1>Дані про молекулу:</h1>
+        {% if aids and sids %}
+            <span>IUPAC-назва: {{ iupac_name }}</span>
+            <span>Молекулярна маса: {{ molecular_weight }}</span>
+            <span>Молекулярна формула: {{ molecular_formula }}</span>
+            <span>Точна маса: {{ exact_mass }}</span>
+            <span>AIDs: {{ aids }}</span>
+            <span>SIDs: {{ sids }}</span>
+            {% else %}
+            <span>IUPAC-назва: {{ iupac_name }}</span>
+            <span>Молекулярна маса: {{ molecular_weight }}</span>
+            <span>Молекулярна формула: {{ molecular_formula }}</span>
+            <span>Точна маса: {{ exact_mass }}</span>
+        {% endif %}
+        <hr>
+        <span class="add_info">Дані взято з <a href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a></span>
+    </div>
+
+</div>
+
+<span id="molecule" style='display: none;'>{{ mol_block }}</span>
+
+<script src="{% static 'molecules/js/molecule_view.js' %}"></script>
 {% endblock %}
