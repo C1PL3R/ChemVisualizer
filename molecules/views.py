@@ -83,8 +83,8 @@ def molecule_view(request):
         }
 
     response = render(request, 'molecule_view.html', context)
-    # response.delete_cookie('moleculeName', path='/')
-    # response.delete_cookie('moleculeSmiles', path='/')
+    response.delete_cookie('moleculeName', path='/')
+    response.delete_cookie('moleculeSmiles', path='/')
     return response
 
 
