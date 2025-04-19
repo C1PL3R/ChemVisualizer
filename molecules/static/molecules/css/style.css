@@ -281,12 +281,11 @@ h1 {
     position: relative;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 0;
     overflow: hidden;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 0px;
-    z-index: 0;
     max-width: 100%;
 }
 
@@ -298,7 +297,8 @@ h1 {
     border-radius: 10px;
     font-size: 15px;
     display: none;
-    max-width: 40%;
+    width: 100%;
+    max-width: 700px;
     max-height: 200px;
     align-items: center;
 }
