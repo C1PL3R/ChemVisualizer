@@ -33,7 +33,9 @@
     
     <div id="formulaOfSubstance">
         <h1>Уникайте введення формул з дужками.</h1>
-        <input id="inputFormula" type="text" placeholder="Введіть формулу речовини" maxlength="50">
+        <input oninput="this.value = this.value.toUpperCase()"
+         id="inputFormula" type="text" 
+         placeholder="Введіть формулу речовини" maxlength="50">
         <button style="cursor: pointer;" id="sendFormulaBtn">Надіслати</button><br>
         <a id="moleculeLinkFormula" href="">Переглянути тут!</a>
     </div>

@@ -6,7 +6,6 @@ from . import views
 from rest_framework import routers
 from .views import MoluculeAPIView
 
-
 handler404 = 'your_project.views.custom_page_not_found'
 handler500 = 'your_project.views.custom_error_view'
 
