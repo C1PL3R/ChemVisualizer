@@ -9,6 +9,8 @@ import pubchempy as pcp
 from .serializer import MoluculeSerializer
 from .models import Molucule
 from rest_framework import viewsets
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 
 molecular_formula = None
@@ -83,58 +85,37 @@ def molecule_view(request):
         }
 
     response = render(request, 'molecule_view.html', context)
-    response.delete_cookie('moleculeName', path='/')
-    response.delete_cookie('moleculeSmiles', path='/')
+    # response.delete_cookie('moleculeName', path='/')
+    # response.delete_cookie('moleculeSmiles', path='/')
     return response
 
 
-@csrf_exempt
-def send_name(request):
-    if request.method == 'POST':
-        try:
-            data = json.loads(request.body)
-            name = data.get("name")
-
-            results = pcp.get_compounds(name, 'name')
-
-            if results:
-                compound = results[0]
-                smiles = compound.isomeric_smiles
-                return JsonResponse({'status': 'success', 'name': name, 'smiles': smiles})
-            else:
-                return JsonResponse({'status': 'fail', 'error': 'Сполуку не знайдено'}, status=404)
-
-        except json.JSONDecodeError:
-            return JsonResponse({'status': 'fail', 'error': 'Невалідний JSON'}, status=400)
-        except Exception as e:
-            return JsonResponse({'status': 'fail', 'error': str(e)}, status=500)
-
-    return JsonResponse({'status': 'fail', 'error': 'Метод не підтримується'}, status=405)
-
-
-@csrf_exempt
+@api_view(['POST'])
 def send_formula(request):
-    if request.method == 'POST':
-        try:
-            data = json.loads(request.body)
-            formula = data.get("formula")
+    formula = request.data.get('formula')
+    results = pcp.get_compounds(formula, namespace='formula')
             
-            results = pcp.get_compounds(formula, namespace='formula')
-            
-            if results:
-                compound = results[0]
-                
-                smiles = compound.isomeric_smiles
-                name = compound.synonyms[0]
+    if results:
+        compound = results[0]
+        smiles = compound.isomeric_smiles
+        name = compound.synonyms[0]
+        return JsonResponse({'status': 'success', 'name': name, 'smiles': smiles})
+    else:
+        return JsonResponse({'status': 'fail', 'error': 'Сполуку не знайдено'}, status=404)
 
-            return JsonResponse({'status': 'success', 'name': name, 'smiles': smiles})
 
-        except json.JSONDecodeError:
-            return JsonResponse({'status': 'fail', 'error': 'Invalid JSON'}, status=400)
-        except Exception as e:
-            return JsonResponse({'status': 'fail', 'error': str(e)}, status=500)
+@api_view(['POST'])
+def send_name(request):
+    name = request.data.get('name')
+    results = pcp.get_compounds(name, 'name')
 
-    return JsonResponse({'status': 'fail', 'error': 'Invalid HTTP method'}, status=405)
+    if results:
+        compound = results[0]
+        smiles = compound.isomeric_smiles
+        return JsonResponse({'status': 'success', 'name': name, 'smiles': smiles})
+    else:
+        return JsonResponse({'status': 'fail', 'error': 'Сполуку не знайдено'}, status=404)
+
 
 def custom_page_not_found(request):
     return render(request, '404.html', status=404)
@@ -144,6 +125,6 @@ def custom_error_view(request):
     return render(request, '500.html', status=500)
 
 
-class MoluculeAPIView(viewsets.ModelViewSet):
+class MoluculeAPIView(viewsets.ReadOnlyModelViewSet):
     queryset = Molucule.objects.all()
     serializer_class = MoluculeSerializer

@@ -1,4 +1,5 @@
 const molecule = document.getElementById("molecule").innerText;
+const molecule_name = document.getElementById("molecule_name").innerText;
 
 document.addEventListener("DOMContentLoaded", function () {
     var molBlock = molecule;
@@ -38,12 +39,12 @@ document.getElementById("downloadBtn").addEventListener("click", function () {
         var blob = new Blob([Data], { type: "text/plain" });
         var link = document.createElement("a");
         link.href = URL.createObjectURL(blob);
-        link.download = "molecule.sdf";
+        link.download = molecule_name + ".sdf";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
     } else {
-        console.error("MOL дані порожні!");
+        console.error("SDF дані порожні!");
     }
 });
 
@@ -59,3 +60,4 @@ function openFullscreen() {
         elem.msRequestFullscreen();
     }
 }
+

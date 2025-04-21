@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code';
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+button{
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    padding: 8px;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #FFFFFF;
+}
+
+header{
+    width: 100%;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.menu-desktop{
+    background-color: #1D1D2B;
+    height: 60px;
+    padding: 5px;
+    display: flex;
+    border-radius: 10px;
+}
+
+.menu-desktop span{
+    color: #FFFFFF;
+    font-size: 25px;
+    margin-left: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-desktop button{
+    background-color: #31315A;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.menu-buttons{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    margin-left: 10%;
+    width: 80%;
+}
+
+#menu{
+    display: none;
+}
+
+.burger-menu-text{
+    display: none;
+}
+
+.buttons{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: right;
+    width: 100%;
+    margin-right: 20px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    font-family: monospace;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.divider a {
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.divider a:hover {
+    scale: 1.1;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ffffff;
+}
+
+.divider::before {
+    margin-right: 10px;
+}
+
+.divider::after {
+    margin-left: 10px;
+}
+
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    background-color: #1d1d2b;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    transition: 0.5s;
+}

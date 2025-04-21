@@ -143,3 +143,62 @@ document.getElementById("formulaOfSubstanceBtn").addEventListener("click", funct
 	}
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("molecule-container");
+    const emptyMessage = document.getElementById("empty-message");
+    const loadMoreButton = document.getElementById("load-more");
+
+    let allMolecules = [];
+    let currentIndex = 0;
+    const batchSize = 9;
+
+    fetch(window.location.origin + "/api/molecule-history")
+    .then(response => response.json())
+    .then(data => {
+        if (data.length === 0) {
+            emptyMessage.style.display = "block";
+            return;
+        }
+
+        allMolecules = data;
+        loadMoreButton.style.display = "inline-block";
+        renderNextBatch();
+    });
+
+    loadMoreButton.addEventListener("click", renderNextBatch);
+
+    function renderNextBatch() {
+        const nextBatch = allMolecules.slice(currentIndex, currentIndex + batchSize);
+
+        nextBatch.forEach(molecule => {
+            const elementDiv = document.createElement("div");
+            elementDiv.className = "element";
+            elementDiv.setAttribute("onclick", `OpenModel(name='${molecule.name}', smiles='${molecule.smiles}')`);
+
+            const nameSpan = document.createElement("span");
+            nameSpan.className = "nameOfMol";
+            nameSpan.textContent = molecule.name;
+
+            const dateSpan = document.createElement("span");
+            dateSpan.className = "date";
+            const date = new Date(molecule.created_at);
+            const formattedDate = date.toLocaleDateString("uk-UA", {
+                year: "2-digit",
+                month: "2-digit",
+                day: "2-digit"
+            }).replace(/\//g, '.');
+
+            dateSpan.textContent = formattedDate;
+
+            elementDiv.appendChild(nameSpan);
+            elementDiv.appendChild(dateSpan);
+            container.appendChild(elementDiv);
+        });
+
+        currentIndex += batchSize;
+
+        if (currentIndex >= allMolecules.length) {
+            loadMoreButton.style.display = "none";
+        }
+    }
+});

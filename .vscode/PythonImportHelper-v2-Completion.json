@@ -65,6 +65,14 @@
         "documentation": {}
     },
     {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
@@ -94,6 +102,31 @@
         "description": "django.db",
         "isExtraImport": true,
         "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "template",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "mark_safe",
+        "importPath": "django.utils.safestring",
+        "description": "django.utils.safestring",
+        "isExtraImport": true,
+        "detail": "django.utils.safestring",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
         "documentation": {}
     },
     {
@@ -265,6 +298,22 @@
         "importPath": "pubchempy",
         "description": "pubchempy",
         "detail": "pubchempy",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
         "documentation": {}
     },
     {
@@ -502,6 +551,24 @@
         "documentation": {}
     },
     {
+        "label": "format_formula",
+        "kind": 2,
+        "importPath": "molecules.templatetags.custom_filters",
+        "description": "molecules.templatetags.custom_filters",
+        "peekOfCode": "def format_formula(formula):\n    \"\"\"\n    Перетворює C6H12O6 → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>\n    \"\"\"\n    if not isinstance(formula, str):\n        return formula\n    formatted = re.sub(r'(\\d+)', r'<sub>\\1</sub>', formula)\n    return mark_safe(formatted)",
+        "detail": "molecules.templatetags.custom_filters",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "kind": 5,
+        "importPath": "molecules.templatetags.custom_filters",
+        "description": "molecules.templatetags.custom_filters",
+        "peekOfCode": "register = template.Library()\n@register.filter\ndef format_formula(formula):\n    \"\"\"\n    Перетворює C6H12O6 → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>\n    \"\"\"\n    if not isinstance(formula, str):\n        return formula\n    formatted = re.sub(r'(\\d+)', r'<sub>\\1</sub>', formula)\n    return mark_safe(formatted)",
+        "detail": "molecules.templatetags.custom_filters",
+        "documentation": {}
+    },
+    {
         "label": "MoleculesConfig",
         "kind": 6,
         "importPath": "molecules.apps",
@@ -542,7 +609,7 @@
         "kind": 5,
         "importPath": "molecules.urls",
         "description": "molecules.urls",
-        "peekOfCode": "handler500 = 'your_project.views.custom_error_view'\nrouter = routers.DefaultRouter()\nrouter.register(r'molecule-history', MoluculeAPIView, basename='molecule-history')\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('send-formula/', views.send_formula, name='send_formula'),\n    path('send-name/', views.send_name, name='send-name')",
+        "peekOfCode": "handler500 = 'your_project.views.custom_error_view'\nrouter = routers.DefaultRouter()\nrouter.register(r'molecule-history', MoluculeAPIView, basename='molecule-history')\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('send-formula/', views.send_formula, name='send_formula'),\n    path('send-name/', views.send_name, name='send-name'),",
         "detail": "molecules.urls",
         "documentation": {}
     },
@@ -551,7 +618,7 @@
         "kind": 5,
         "importPath": "molecules.urls",
         "description": "molecules.urls",
-        "peekOfCode": "router = routers.DefaultRouter()\nrouter.register(r'molecule-history', MoluculeAPIView, basename='molecule-history')\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('send-formula/', views.send_formula, name='send_formula'),\n    path('send-name/', views.send_name, name='send-name')\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
+        "peekOfCode": "router = routers.DefaultRouter()\nrouter.register(r'molecule-history', MoluculeAPIView, basename='molecule-history')\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('send-formula/', views.send_formula, name='send_formula'),\n    path('send-name/', views.send_name, name='send-name'),\n    path('api/', include(router.urls)),",
         "detail": "molecules.urls",
         "documentation": {}
     },
@@ -560,7 +627,7 @@
         "kind": 5,
         "importPath": "molecules.urls",
         "description": "molecules.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('send-formula/', views.send_formula, name='send_formula'),\n    path('send-name/', views.send_name, name='send-name')\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('send-formula/', views.send_formula, name='send_formula'),\n    path('send-name/', views.send_name, name='send-name'),\n    path('api/', include(router.urls)),\n] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)",
         "detail": "molecules.urls",
         "documentation": {}
     },
@@ -569,7 +636,7 @@
         "kind": 6,
         "importPath": "molecules.views",
         "description": "molecules.views",
-        "peekOfCode": "class MoluculeAPIView(viewsets.ModelViewSet):\n    queryset = Molucule.objects.all()\n    serializer_class = MoluculeSerializer",
+        "peekOfCode": "class MoluculeAPIView(viewsets.ReadOnlyModelViewSet):\n    queryset = Molucule.objects.all()\n    serializer_class = MoluculeSerializer",
         "detail": "molecules.views",
         "documentation": {}
     },
@@ -610,20 +677,20 @@
         "documentation": {}
     },
     {
-        "label": "send_name",
-        "kind": 2,
-        "importPath": "molecules.views",
-        "description": "molecules.views",
-        "peekOfCode": "def send_name(request):\n    if request.method == 'POST':\n        try:\n            data = json.loads(request.body)\n            name = data.get(\"name\")\n            results = pcp.get_compounds(name, 'name')\n            if results:\n                compound = results[0]\n                smiles = compound.isomeric_smiles\n                return JsonResponse({'status': 'success', 'name': name, 'smiles': smiles})",
-        "detail": "molecules.views",
-        "documentation": {}
-    },
-    {
         "label": "send_formula",
         "kind": 2,
         "importPath": "molecules.views",
         "description": "molecules.views",
-        "peekOfCode": "def send_formula(request):\n    if request.method == 'POST':\n        try:\n            data = json.loads(request.body)\n            formula = data.get(\"formula\")\n            results = pcp.get_compounds(formula, namespace='formula')\n            if results:\n                compound = results[0]\n                smiles = compound.isomeric_smiles\n                name = compound.synonyms[0]",
+        "peekOfCode": "def send_formula(request):\n    formula = request.data.get('formula')\n    results = pcp.get_compounds(formula, namespace='formula')\n    if results:\n        compound = results[0]\n        smiles = compound.isomeric_smiles\n        name = compound.synonyms[0]\n        return JsonResponse({'status': 'success', 'name': name, 'smiles': smiles})\n    else:\n        return JsonResponse({'status': 'fail', 'error': 'Сполуку не знайдено'}, status=404)",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "send_name",
+        "kind": 2,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "def send_name(request):\n    name = request.data.get('name')\n    results = pcp.get_compounds(name, 'name')\n    if results:\n        compound = results[0]\n        smiles = compound.isomeric_smiles\n        return JsonResponse({'status': 'success', 'name': name, 'smiles': smiles})\n    else:\n        return JsonResponse({'status': 'fail', 'error': 'Сполуку не знайдено'}, status=404)\ndef custom_page_not_found(request):",
         "detail": "molecules.views",
         "documentation": {}
     },
@@ -632,7 +699,7 @@
         "kind": 2,
         "importPath": "molecules.views",
         "description": "molecules.views",
-        "peekOfCode": "def custom_page_not_found(request):\n    return render(request, '404.html', status=404)\ndef custom_error_view(request):\n    return render(request, '500.html', status=500)\nclass MoluculeAPIView(viewsets.ModelViewSet):\n    queryset = Molucule.objects.all()\n    serializer_class = MoluculeSerializer",
+        "peekOfCode": "def custom_page_not_found(request):\n    return render(request, '404.html', status=404)\ndef custom_error_view(request):\n    return render(request, '500.html', status=500)\nclass MoluculeAPIView(viewsets.ReadOnlyModelViewSet):\n    queryset = Molucule.objects.all()\n    serializer_class = MoluculeSerializer",
         "detail": "molecules.views",
         "documentation": {}
     },
@@ -641,7 +708,7 @@
         "kind": 2,
         "importPath": "molecules.views",
         "description": "molecules.views",
-        "peekOfCode": "def custom_error_view(request):\n    return render(request, '500.html', status=500)\nclass MoluculeAPIView(viewsets.ModelViewSet):\n    queryset = Molucule.objects.all()\n    serializer_class = MoluculeSerializer",
+        "peekOfCode": "def custom_error_view(request):\n    return render(request, '500.html', status=500)\nclass MoluculeAPIView(viewsets.ReadOnlyModelViewSet):\n    queryset = Molucule.objects.all()\n    serializer_class = MoluculeSerializer",
         "detail": "molecules.views",
         "documentation": {}
     },
