@@ -10,23 +10,46 @@ document.addEventListener("DOMContentLoaded", function () {
         // Тонкі зв'язки та невеликі сфери
         viewer.setStyle({}, { stick: { radius: 0.07 }, sphere: { radius: 0.3 } });
 
-        // Додаємо підписи атомів
-        var atoms = viewer.getModel().selectedAtoms({});
-        atoms.forEach(atom => {
-            viewer.addLabel(atom.elem, {
-                position: { x: atom.x, y: atom.y, z: atom.z },
-                fontSize: 18,
-                fontColor: "black",
-                backgroundColor: "white",  // Для перевірки можна поставити колір
-                backgroundOpacity: 0.0      // Повна прозорість фону
-            });
-        });
         viewer.setBackgroundColor("white");
 
 
         viewer.zoomTo();
         viewer.render();
-        viewer.zoom(2, 500);
+        viewer.zoom(1.2, 500);
+
+        document.getElementById('animation').addEventListener('change', function () {
+            var text = document.getElementById('turn-on-off');
+            if (this.checked) {
+                viewer.spin(true, 2);
+                text.innerHTML = "Вимкнути анімацію";
+            } else {
+                viewer.spin(false);
+                text.innerHTML = "Увімкнути анімацію";
+            }
+        });
+
+        document.getElementById('show-text').addEventListener('change', function () {
+            var text = document.getElementById('show-text-span');
+
+            if (this.checked) {
+                var atoms = viewer.getModel().selectedAtoms({});
+                atoms.forEach(atom => {
+                    viewer.addLabel(atom.elem, {
+                        position: { x: atom.x, y: atom.y, z: atom.z },
+                        fontSize: 18,
+                        fontColor: "black",
+                        backgroundColor: "white",  // Для перевірки можна поставити колір
+                        backgroundOpacity: 0.0      // Повна прозорість фону
+                    });
+                });
+
+                text.innerHTML = "Приховати підписи";
+            } else {
+                viewer.removeAllLabels();
+                text.innerHTML = "Показати підписи"; 
+            }
+            viewer.render();
+        });
 
     } else {
         console.error("MolBlock порожній або не був переданий.");

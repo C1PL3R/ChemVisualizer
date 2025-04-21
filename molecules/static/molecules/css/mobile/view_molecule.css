@@ -21,4 +21,9 @@
         text-align: center;
         font-weight: 600;
     }
+
+    .controls{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }

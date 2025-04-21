@@ -8,7 +8,7 @@
 }
 
 .divider{
-    margin-top: -10px;
+    margin-top: -5px;
 }
 
 .content button {
@@ -46,14 +46,29 @@
     font-size: 20px;
     color: #ffffff;
 }
-.data_about_molecule h1{
-    font-size: 20px;
-    color: #ffffff;
-    width: 100%;
-    text-align: center;
-    font-weight: 200;
-}
 
 .data_about_molecule a{
     color: rgb(176, 176, 176);
+}
+
+.controls{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 50px;
+}
+
+.controls input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.controls span{
+    color: #ffffff;
+    text-align: center;
+    transition: 0.5s;
 }
