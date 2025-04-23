@@ -1,0 +1,74 @@
+.content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.divider{
+    margin-top: -5px;
+}
+
+.content button {
+    font-size: 17px;
+    padding: 5px;
+}
+
+.viewer-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+#viewer {
+    width: 600px;
+    height: 400px;
+    cursor: all-scroll;
+    position: relative;
+}
+
+.data_about_molecule{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    gap: 10px;
+}
+
+.data_about_molecule span{
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.data_about_molecule a{
+    color: rgb(176, 176, 176);
+}
+
+.controls{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 50px;
+}
+
+.controls input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.controls span{
+    color: #ffffff;
+    text-align: center;
+    transition: 0.5s;
+}

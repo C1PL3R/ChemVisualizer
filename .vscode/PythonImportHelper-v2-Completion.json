@@ -1,0 +1,1018 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "template",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "mark_safe",
+        "importPath": "django.utils.safestring",
+        "description": "django.utils.safestring",
+        "isExtraImport": true,
+        "detail": "django.utils.safestring",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "tempfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tempfile",
+        "description": "tempfile",
+        "detail": "tempfile",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "Chem",
+        "importPath": "rdkit",
+        "description": "rdkit",
+        "isExtraImport": true,
+        "detail": "rdkit",
+        "documentation": {}
+    },
+    {
+        "label": "Chem",
+        "importPath": "rdkit",
+        "description": "rdkit",
+        "isExtraImport": true,
+        "detail": "rdkit",
+        "documentation": {}
+    },
+    {
+        "label": "Chem",
+        "importPath": "rdkit",
+        "description": "rdkit",
+        "isExtraImport": true,
+        "detail": "rdkit",
+        "documentation": {}
+    },
+    {
+        "label": "AllChem",
+        "importPath": "rdkit.Chem",
+        "description": "rdkit.Chem",
+        "isExtraImport": true,
+        "detail": "rdkit.Chem",
+        "documentation": {}
+    },
+    {
+        "label": "AllChem",
+        "importPath": "rdkit.Chem",
+        "description": "rdkit.Chem",
+        "isExtraImport": true,
+        "detail": "rdkit.Chem",
+        "documentation": {}
+    },
+    {
+        "label": "AllChem",
+        "importPath": "rdkit.Chem",
+        "description": "rdkit.Chem",
+        "isExtraImport": true,
+        "detail": "rdkit.Chem",
+        "documentation": {}
+    },
+    {
+        "label": "mesh",
+        "importPath": "stl",
+        "description": "stl",
+        "isExtraImport": true,
+        "detail": "stl",
+        "documentation": {}
+    },
+    {
+        "label": "mesh",
+        "importPath": "stl",
+        "description": "stl",
+        "isExtraImport": true,
+        "detail": "stl",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "pi",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "sin",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "cos",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "pi",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "sin",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "cos",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "routers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
+        "label": "handler400",
+        "importPath": "django.conf.urls",
+        "description": "django.conf.urls",
+        "isExtraImport": true,
+        "detail": "django.conf.urls",
+        "documentation": {}
+    },
+    {
+        "label": "handler403",
+        "importPath": "django.conf.urls",
+        "description": "django.conf.urls",
+        "isExtraImport": true,
+        "detail": "django.conf.urls",
+        "documentation": {}
+    },
+    {
+        "label": "handler404",
+        "importPath": "django.conf.urls",
+        "description": "django.conf.urls",
+        "isExtraImport": true,
+        "detail": "django.conf.urls",
+        "documentation": {}
+    },
+    {
+        "label": "handler500",
+        "importPath": "django.conf.urls",
+        "description": "django.conf.urls",
+        "isExtraImport": true,
+        "detail": "django.conf.urls",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "pubchempy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pubchempy",
+        "description": "pubchempy",
+        "detail": "pubchempy",
+        "documentation": {}
+    },
+    {
+        "label": "BadRequestError",
+        "importPath": "pubchempy",
+        "description": "pubchempy",
+        "isExtraImport": true,
+        "detail": "pubchempy",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "ChemVisualizer.asgi",
+        "description": "ChemVisualizer.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "ChemVisualizer.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = \"django-insecure-!6alrba$)s%=k$5xm)oolyciag7)_4o5*srfu19)b&0li2w&5n\"\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "SECRET_KEY = \"django-insecure-!6alrba$)s%=k$5xm)oolyciag7)_4o5*srfu19)b&0li2w&5n\"\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "ALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    'whitenoise.runserver_nostatic',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    # Додатки\n    'molecules',",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    \"whitenoise.middleware.WhiteNoiseMiddleware\",\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "ROOT_URLCONF = 'ChemVisualizer.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'ChemVisualizer.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'uk'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Додаємо правильний шлях до статичних файлів\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'molecules', 'static'),  # Тепер всередині додатку",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Додаємо правильний шлях до статичних файлів\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'molecules', 'static'),  # Тепер всередині додатку\n]",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Додаємо правильний шлях до статичних файлів\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'molecules', 'static'),  # Тепер всередині додатку\n]\n# Куди Django буде збирати всі статичні файли (для продакшну)",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Додаємо правильний шлях до статичних файлів\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'molecules', 'static'),  # Тепер всередині додатку\n]\n# Куди Django буде збирати всі статичні файли (для продакшну)\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Додаємо правильний шлях до статичних файлів\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'molecules', 'static'),  # Тепер всередині додатку\n]\n# Куди Django буде збирати всі статичні файли (для продакшну)\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_DIRS",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'molecules', 'static'),  # Тепер всередині додатку\n]\n# Куди Django буде збирати всі статичні файли (для продакшну)\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_ROOT",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_AUTO_FIELD",
+        "kind": 5,
+        "importPath": "ChemVisualizer.settings",
+        "description": "ChemVisualizer.settings",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "ChemVisualizer.settings",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "ChemVisualizer.urls",
+        "description": "ChemVisualizer.urls",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include(\"molecules.urls\"))\n]",
+        "detail": "ChemVisualizer.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "ChemVisualizer.wsgi",
+        "description": "ChemVisualizer.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "ChemVisualizer.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "molecules.migrations.0001_initial",
+        "description": "molecules.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Molucule',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('name', models.CharField(max_length=50, unique=True)),",
+        "detail": "molecules.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "format_formula",
+        "kind": 2,
+        "importPath": "molecules.templatetags.custom_filters",
+        "description": "molecules.templatetags.custom_filters",
+        "peekOfCode": "def format_formula(formula):\n    \"\"\"\n    Перетворює C6H12O6 → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>\n    \"\"\"\n    if not isinstance(formula, str):\n        return formula\n    formatted = re.sub(r'(\\d+)', r'<sub>\\1</sub>', formula)\n    return mark_safe(formatted)",
+        "detail": "molecules.templatetags.custom_filters",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "kind": 5,
+        "importPath": "molecules.templatetags.custom_filters",
+        "description": "molecules.templatetags.custom_filters",
+        "peekOfCode": "register = template.Library()\n@register.filter\ndef format_formula(formula):\n    \"\"\"\n    Перетворює C6H12O6 → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>\n    \"\"\"\n    if not isinstance(formula, str):\n        return formula\n    formatted = re.sub(r'(\\d+)', r'<sub>\\1</sub>', formula)\n    return mark_safe(formatted)",
+        "detail": "molecules.templatetags.custom_filters",
+        "documentation": {}
+    },
+    {
+        "label": "MoleculesConfig",
+        "kind": 6,
+        "importPath": "molecules.apps",
+        "description": "molecules.apps",
+        "peekOfCode": "class MoleculesConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'molecules'",
+        "detail": "molecules.apps",
+        "documentation": {}
+    },
+    {
+        "label": "convert_sdf_to_stl_bytes",
+        "kind": 2,
+        "importPath": "molecules.converter",
+        "description": "molecules.converter",
+        "peekOfCode": "def convert_sdf_to_stl_bytes(sdf_data: str) -> bytes:\n    mol = Chem.MolFromMolBlock(sdf_data, removeHs=False)\n    if mol is None:\n        raise ValueError(\"Не вдалося зчитати файл SDF\")\n    if not mol.GetConformer().Is3D():\n        AllChem.EmbedMolecule(mol)\n        AllChem.UFFOptimizeMolecule(mol)\n    conf = mol.GetConformer()\n    all_vertices = []\n    all_triangles = []",
+        "detail": "molecules.converter",
+        "documentation": {}
+    },
+    {
+        "label": "Molucule",
+        "kind": 6,
+        "importPath": "molecules.models",
+        "description": "molecules.models",
+        "peekOfCode": "class Molucule(models.Model):\n    name = models.CharField(max_length=50, null=False, unique=True)\n    smiles = models.TextField(null=False, unique=True)\n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return self.name",
+        "detail": "molecules.models",
+        "documentation": {}
+    },
+    {
+        "label": "MoluculeSerializer",
+        "kind": 6,
+        "importPath": "molecules.serializer",
+        "description": "molecules.serializer",
+        "peekOfCode": "class MoluculeSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Molucule\n        fields = \"__all__\"",
+        "detail": "molecules.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "handler404",
+        "kind": 5,
+        "importPath": "molecules.urls",
+        "description": "molecules.urls",
+        "peekOfCode": "handler404 = 'your_project.views.custom_page_not_found'\nhandler500 = 'your_project.views.custom_error_view'\nrouter = routers.DefaultRouter()\nrouter.register(r'molecule-history', MoluculeAPIView, basename='molecule-history')\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('converter/', views.converter_to_sdf, name='converter_to_sdf'),",
+        "detail": "molecules.urls",
+        "documentation": {}
+    },
+    {
+        "label": "handler500",
+        "kind": 5,
+        "importPath": "molecules.urls",
+        "description": "molecules.urls",
+        "peekOfCode": "handler500 = 'your_project.views.custom_error_view'\nrouter = routers.DefaultRouter()\nrouter.register(r'molecule-history', MoluculeAPIView, basename='molecule-history')\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('converter/', views.converter_to_sdf, name='converter_to_sdf'),\n    path('visualize-sdf/', views.visualize_sdf, name='visualize_sdf'),",
+        "detail": "molecules.urls",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "molecules.urls",
+        "description": "molecules.urls",
+        "peekOfCode": "router = routers.DefaultRouter()\nrouter.register(r'molecule-history', MoluculeAPIView, basename='molecule-history')\nurlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('converter/', views.converter_to_sdf, name='converter_to_sdf'),\n    path('visualize-sdf/', views.visualize_sdf, name='visualize_sdf'),\n    path('send-formula/', views.send_formula, name='send_formula'),",
+        "detail": "molecules.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "molecules.urls",
+        "description": "molecules.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n    path('view_molecule/', views.molecule_view, name='view_molecule'),\n    path('about/', views.about, name='about'),\n    path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),\n    path('converter/', views.converter_to_sdf, name='converter_to_sdf'),\n    path('visualize-sdf/', views.visualize_sdf, name='visualize_sdf'),\n    path('send-formula/', views.send_formula, name='send_formula'),\n    path('send-name/', views.send_name, name='send-name'),\n    path('api/', include(router.urls)),",
+        "detail": "molecules.urls",
+        "documentation": {}
+    },
+    {
+        "label": "MoluculeAPIView",
+        "kind": 6,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "class MoluculeAPIView(viewsets.ReadOnlyModelViewSet):\n    queryset = Molucule.objects.all()\n    serializer_class = MoluculeSerializer",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "converter_to_sdf",
+        "kind": 2,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "def converter_to_sdf(request):\n    if request.method == \"POST\" and request.FILES.get(\"sdf_file\"):\n        sdf_file = request.FILES[\"sdf_file\"]\n        sdf_data = sdf_file.read().decode(\"utf-8\")\n        try:\n            stl_data = convert_sdf_to_stl_bytes(sdf_data)\n            # Отримуємо ім'я файлу без розширення\n            filename = os.path.splitext(sdf_file.name)[0]\n            return HttpResponse(stl_data, content_type=\"application/sla\", headers={\n                'Content-Disposition': f'attachment; filename=\"{filename}.stl\"'",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "def index(request):\n    molucules = Molucule.objects.all()\n    return render(request, 'index.html', {'molecules_history': molucules})\ndef about(request):\n    return render(request, 'about.html')\ndef what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request):\n    name = request.COOKIES.get('moleculeName')\n    smiles = request.COOKIES.get('moleculeSmiles')",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "about",
+        "kind": 2,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "def about(request):\n    return render(request, 'about.html')\ndef what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request):\n    name = request.COOKIES.get('moleculeName')\n    smiles = request.COOKIES.get('moleculeSmiles')\n    results = pcp.get_compounds(name, 'name')\n    if results:\n        compound = results[0]",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "what_are_smiles",
+        "kind": 2,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "def what_are_smiles(request):\n    return render(request, 'what_are_smiles.html')\ndef molecule_view(request):\n    name = request.COOKIES.get('moleculeName')\n    smiles = request.COOKIES.get('moleculeSmiles')\n    results = pcp.get_compounds(name, 'name')\n    if results:\n        compound = results[0]\n        smiles = compound.isomeric_smiles\n        molecular_formula = compound.molecular_formula",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "molecule_view",
+        "kind": 2,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "def molecule_view(request):\n    name = request.COOKIES.get('moleculeName')\n    smiles = request.COOKIES.get('moleculeSmiles')\n    results = pcp.get_compounds(name, 'name')\n    if results:\n        compound = results[0]\n        smiles = compound.isomeric_smiles\n        molecular_formula = compound.molecular_formula\n        molecular_weight = compound.molecular_weight\n        exact_mass = compound.exact_mass",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "send_formula",
+        "kind": 2,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "def send_formula(request):\n    formula = request.data.get('formula')\n    results = pcp.get_compounds(formula, namespace='formula')\n    try:\n        if results:\n            compound = results[0]\n            smiles = compound.isomeric_smiles\n            name = compound.synonyms[0]\n            return JsonResponse({'status': 'success', 'name': name, 'smiles': smiles}, status=200)\n        else:",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "send_name",
+        "kind": 2,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "def send_name(request):\n    name = request.data.get('name')\n    results = pcp.get_compounds(name, 'name')\n    if results:\n        compound = results[0]\n        smiles = compound.isomeric_smiles\n        return JsonResponse({'status': 'success', 'name': name, 'smiles': smiles}, status=200)\n    else:\n        return JsonResponse({'status': 'fail', 'error': 'Сполуку не знайдено'})\ndef custom_page_not_found(request):",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "custom_page_not_found",
+        "kind": 2,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "def custom_page_not_found(request):\n    return render(request, '404.html', status=404)\ndef custom_error_view(request):\n    return render(request, '500.html', status=500)\ndef visualize_sdf(request):\n    if request.method == 'POST' and request.FILES.get('sdf_file'):\n        sdf_file = request.FILES['sdf_file']\n        sdf_data = sdf_file.read().decode('utf-8')\n        request.session['sdf_data'] = sdf_data  # тимчасово в сесію\n        return redirect('visualize_sdf')  # після POST → GET",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "custom_error_view",
+        "kind": 2,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "def custom_error_view(request):\n    return render(request, '500.html', status=500)\ndef visualize_sdf(request):\n    if request.method == 'POST' and request.FILES.get('sdf_file'):\n        sdf_file = request.FILES['sdf_file']\n        sdf_data = sdf_file.read().decode('utf-8')\n        request.session['sdf_data'] = sdf_data  # тимчасово в сесію\n        return redirect('visualize_sdf')  # після POST → GET\n    sdf_data = request.session.pop('sdf_data', None)\n    return render(request, 'visualize_sdf.html', {'sdf_data': sdf_data})",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "visualize_sdf",
+        "kind": 2,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "def visualize_sdf(request):\n    if request.method == 'POST' and request.FILES.get('sdf_file'):\n        sdf_file = request.FILES['sdf_file']\n        sdf_data = sdf_file.read().decode('utf-8')\n        request.session['sdf_data'] = sdf_data  # тимчасово в сесію\n        return redirect('visualize_sdf')  # після POST → GET\n    sdf_data = request.session.pop('sdf_data', None)\n    return render(request, 'visualize_sdf.html', {'sdf_data': sdf_data})\nclass MoluculeAPIView(viewsets.ReadOnlyModelViewSet):\n    queryset = Molucule.objects.all()",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "molecular_formula",
+        "kind": 5,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "molecular_formula = None\nmolecular_weight = None\niupac_name = None\nimage_url = None\nelements = None\ndef converter_to_sdf(request):\n    if request.method == \"POST\" and request.FILES.get(\"sdf_file\"):\n        sdf_file = request.FILES[\"sdf_file\"]\n        sdf_data = sdf_file.read().decode(\"utf-8\")\n        try:",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "molecular_weight",
+        "kind": 5,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "molecular_weight = None\niupac_name = None\nimage_url = None\nelements = None\ndef converter_to_sdf(request):\n    if request.method == \"POST\" and request.FILES.get(\"sdf_file\"):\n        sdf_file = request.FILES[\"sdf_file\"]\n        sdf_data = sdf_file.read().decode(\"utf-8\")\n        try:\n            stl_data = convert_sdf_to_stl_bytes(sdf_data)",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "iupac_name",
+        "kind": 5,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "iupac_name = None\nimage_url = None\nelements = None\ndef converter_to_sdf(request):\n    if request.method == \"POST\" and request.FILES.get(\"sdf_file\"):\n        sdf_file = request.FILES[\"sdf_file\"]\n        sdf_data = sdf_file.read().decode(\"utf-8\")\n        try:\n            stl_data = convert_sdf_to_stl_bytes(sdf_data)\n            # Отримуємо ім'я файлу без розширення",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "image_url",
+        "kind": 5,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "image_url = None\nelements = None\ndef converter_to_sdf(request):\n    if request.method == \"POST\" and request.FILES.get(\"sdf_file\"):\n        sdf_file = request.FILES[\"sdf_file\"]\n        sdf_data = sdf_file.read().decode(\"utf-8\")\n        try:\n            stl_data = convert_sdf_to_stl_bytes(sdf_data)\n            # Отримуємо ім'я файлу без розширення\n            filename = os.path.splitext(sdf_file.name)[0]",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "elements",
+        "kind": 5,
+        "importPath": "molecules.views",
+        "description": "molecules.views",
+        "peekOfCode": "elements = None\ndef converter_to_sdf(request):\n    if request.method == \"POST\" and request.FILES.get(\"sdf_file\"):\n        sdf_file = request.FILES[\"sdf_file\"]\n        sdf_data = sdf_file.read().decode(\"utf-8\")\n        try:\n            stl_data = convert_sdf_to_stl_bytes(sdf_data)\n            # Отримуємо ім'я файлу без розширення\n            filename = os.path.splitext(sdf_file.name)[0]\n            return HttpResponse(stl_data, content_type=\"application/sla\", headers={",
+        "detail": "molecules.views",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "manage",
+        "description": "manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ChemVisualizer.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "manage",
+        "documentation": {}
+    },
+    {
+        "label": "create_sphere",
+        "kind": 2,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "def create_sphere(center, radius, faces=FACES):\n    vertices = []\n    triangles = []\n    for i in range(faces):\n        lat0 = pi * (-0.5 + float(i) / faces)\n        z0 = radius * sin(lat0)\n        zr0 = radius * cos(lat0)\n        lat1 = pi * (-0.5 + float(i + 1) / faces)\n        z1 = radius * sin(lat1)\n        zr1 = radius * cos(lat1)",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "create_cylinder",
+        "kind": 2,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "def create_cylinder(start, end, radius=BOND_RADIUS, segments=12):\n    start = np.array(start)\n    end = np.array(end)\n    axis = end - start\n    length = np.linalg.norm(axis)\n    if length == 0:\n        return [], []\n    axis /= length\n    not_axis = np.array([1, 0, 0]) if abs(axis[0]) < 0.99 else np.array([0, 1, 0])\n    v = np.cross(axis, not_axis)",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "SDF_FILE",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "SDF_FILE = \"molecule.sdf\"\nSTL_FILE = \"molecule.stl\"\nATOM_RADIUS = 0.3\nBOND_RADIUS = 0.07\nFACES = 20\ndef create_sphere(center, radius, faces=FACES):\n    vertices = []\n    triangles = []\n    for i in range(faces):\n        lat0 = pi * (-0.5 + float(i) / faces)",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "STL_FILE",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "STL_FILE = \"molecule.stl\"\nATOM_RADIUS = 0.3\nBOND_RADIUS = 0.07\nFACES = 20\ndef create_sphere(center, radius, faces=FACES):\n    vertices = []\n    triangles = []\n    for i in range(faces):\n        lat0 = pi * (-0.5 + float(i) / faces)\n        z0 = radius * sin(lat0)",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "ATOM_RADIUS",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "ATOM_RADIUS = 0.3\nBOND_RADIUS = 0.07\nFACES = 20\ndef create_sphere(center, radius, faces=FACES):\n    vertices = []\n    triangles = []\n    for i in range(faces):\n        lat0 = pi * (-0.5 + float(i) / faces)\n        z0 = radius * sin(lat0)\n        zr0 = radius * cos(lat0)",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "BOND_RADIUS",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "BOND_RADIUS = 0.07\nFACES = 20\ndef create_sphere(center, radius, faces=FACES):\n    vertices = []\n    triangles = []\n    for i in range(faces):\n        lat0 = pi * (-0.5 + float(i) / faces)\n        z0 = radius * sin(lat0)\n        zr0 = radius * cos(lat0)\n        lat1 = pi * (-0.5 + float(i + 1) / faces)",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "FACES",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "FACES = 20\ndef create_sphere(center, radius, faces=FACES):\n    vertices = []\n    triangles = []\n    for i in range(faces):\n        lat0 = pi * (-0.5 + float(i) / faces)\n        z0 = radius * sin(lat0)\n        zr0 = radius * cos(lat0)\n        lat1 = pi * (-0.5 + float(i + 1) / faces)\n        z1 = radius * sin(lat1)",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "mol",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "mol = Chem.MolFromMolFile(SDF_FILE, removeHs=False)\nif not mol:\n    raise ValueError(\"Не вдалося завантажити молекулу з SDF.\")\nif not mol.GetConformer().Is3D():\n    AllChem.EmbedMolecule(mol)\n    AllChem.UFFOptimizeMolecule(mol)\nconf = mol.GetConformer()\nall_vertices = []\nall_triangles = []\n# === Сфери для атомів ===",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "conf",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "conf = mol.GetConformer()\nall_vertices = []\nall_triangles = []\n# === Сфери для атомів ===\nfor atom in mol.GetAtoms():\n    pos = conf.GetAtomPosition(atom.GetIdx())\n    center = [pos.x, pos.y, pos.z]\n    vertices, triangles = create_sphere(center, ATOM_RADIUS)\n    offset = len(all_vertices)\n    all_vertices.extend(vertices)",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "all_vertices",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "all_vertices = []\nall_triangles = []\n# === Сфери для атомів ===\nfor atom in mol.GetAtoms():\n    pos = conf.GetAtomPosition(atom.GetIdx())\n    center = [pos.x, pos.y, pos.z]\n    vertices, triangles = create_sphere(center, ATOM_RADIUS)\n    offset = len(all_vertices)\n    all_vertices.extend(vertices)\n    all_triangles.extend([[a + offset for a in tri] for tri in triangles])",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "all_triangles",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "all_triangles = []\n# === Сфери для атомів ===\nfor atom in mol.GetAtoms():\n    pos = conf.GetAtomPosition(atom.GetIdx())\n    center = [pos.x, pos.y, pos.z]\n    vertices, triangles = create_sphere(center, ATOM_RADIUS)\n    offset = len(all_vertices)\n    all_vertices.extend(vertices)\n    all_triangles.extend([[a + offset for a in tri] for tri in triangles])\n# === Циліндри для зв’язків ===",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "all_vertices",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "all_vertices = np.array(all_vertices)\nall_triangles = np.array(all_triangles)\nmol_mesh = mesh.Mesh(np.zeros(all_triangles.shape[0], dtype=mesh.Mesh.dtype))\nfor i, f in enumerate(all_triangles):\n    for j in range(3):\n        mol_mesh.vectors[i][j] = all_vertices[f[j]]\nmol_mesh.save(STL_FILE)\nprint(f\"✅ STL файл збережено: {STL_FILE}\")",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "all_triangles",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "all_triangles = np.array(all_triangles)\nmol_mesh = mesh.Mesh(np.zeros(all_triangles.shape[0], dtype=mesh.Mesh.dtype))\nfor i, f in enumerate(all_triangles):\n    for j in range(3):\n        mol_mesh.vectors[i][j] = all_vertices[f[j]]\nmol_mesh.save(STL_FILE)\nprint(f\"✅ STL файл збережено: {STL_FILE}\")",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "mol_mesh",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "mol_mesh = mesh.Mesh(np.zeros(all_triangles.shape[0], dtype=mesh.Mesh.dtype))\nfor i, f in enumerate(all_triangles):\n    for j in range(3):\n        mol_mesh.vectors[i][j] = all_vertices[f[j]]\nmol_mesh.save(STL_FILE)\nprint(f\"✅ STL файл збережено: {STL_FILE}\")",
+        "detail": "test",
+        "documentation": {}
+    }
+]

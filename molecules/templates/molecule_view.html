@@ -1,0 +1,70 @@
+{% extends "template.html" %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}ChemVisualizer | {{ name }}{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'molecules/css/desktop/view_molecule.css' %}">
+<link rel="stylesheet" href="{% static 'molecules/css/mobile/view_molecule.css' %}">
+
+<script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+
+<meta name="description" content="Перегляд молекули в 3D — ChemVisualizer">
+{% endblock %}
+
+{% block body %}
+<span id="title" style="display: none;">ChemVisualizer | {{ name }}</span>
+
+<div class="divider">
+    <span>{{name}}</span>
+</div>
+
+<div class="content">
+    <button id="openFullscreenBtn" onclick="openFullscreen()">Відкрити на весь екран</button>
+    <button style="z-index: 0;" id="downloadBtn">Завантажити 3D модель</button>
+</div>
+<div class="viewer-container">
+    <div id="viewer">
+        <span style="width: 100%; position: absolute; top: 10px; z-index: 1; color: black; font-size: 20px; text-align: center;">
+            ChemVisualizer| {{name}}
+        </span>
+    </div>
+
+    <div class="controls">
+        <input type="checkbox" id="animation">
+        <span id="turn-on-off"><b>Увімкнути анімацію</b></span>
+
+        <input type="checkbox" id="show-text" >
+        <span id="show-text-span"><b>Показати підписи</b></span>
+    </div>
+</div>
+    
+<div style="margin-top: 10px;" class="divider">
+    <span>Дані про молекулу <b>{{ name }}</b></span>
+</div>
+<div class="data_about_molecule">
+    {% if aids and sids %}
+        <span>IUPAC-назва: <b>{{ iupac_name }}</b></span>
+        <span>Молекулярна маса: <b>{{ molecular_weight }}</b></span>
+        <span>Молекулярна формула: <b>{{ molecular_formula|format_formula }}</b></span>
+        <span>Точна маса: <b>{{ exact_mass }}</b></span>
+        <span>Інші назви (синоніми): <b>{{ synonyms }}</b></span>
+        <span>AIDs: <b>{{ aids }}</b></span>
+        <span>SIDs: <b>{{ sids }}</b></span>
+        {% else %}
+        <span>IUPAC-назва: <b>{{ iupac_name }}</b></span>
+        <span>Молекулярна маса: <b>{{ molecular_weight }}</b></span>
+        <span>Молекулярна формула: <b>{{ molecular_formula|format_formula }}</b></span>
+        <span>Точна маса: <b>{{ exact_mass }}</b></span>
+        <span>Інші назви (синоніми): <b>{{ synonyms }}</b></span>
+    {% endif %}
+    <span class="add_info"><b>Дані взято з <a href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a></b></span>
+</div>
+
+<span id="molecule" style='display: none;'>{{ mol_block }}</span>
+<span id="molecule_name" style='display: none;'>{{ name }}</span>
+
+<script src="{% static 'molecules/js/molecule_view.js' %}"></script>
+{% endblock %}

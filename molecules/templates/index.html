@@ -1,0 +1,56 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block title %}ChemVisualizer | Головна сторінка{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'molecules/css/desktop/index.css' %}">
+<link rel="stylesheet" href="{% static 'molecules/css/mobile/index.css' %}">
+<meta name="description" content="Генерація 3D-моделей молекул за формулою або назвою речовини.">
+<meta name="author" content="C1PL3R">
+{% endblock %}
+
+{% block body %}
+<span id="title" style="display: none;">ChemVisualizer | Головна сторінка</span>
+
+<div id="loader_container">
+    <span id="nameLoader" class="loader" style="display: none;"></span>
+    <span id="formulaLoader" class="loader" style="display: none;"></span>
+</div>
+<div class="content">
+    <div class="search-buttons">
+        <button id="nameOfSubstanceBtn">Генерація за назвою</button>
+        <button id="formulaOfSubstanceBtn">Генерація за формулою</button>
+    </div>
+
+    <div id="input_data_container">
+        <div id="nameOfSubstance">
+            <input id="inputName" type="text" placeholder="Введіть назву речовини (англійською)" maxlength="50">
+            <button style="cursor: pointer;" id="sendNameBtn">Надіслати</button>
+            <a id="moleculeLinkName" href="">Переглянути тут!</a>
+        </div>
+
+        <div id="formulaOfSubstance">
+            <h1>Уникайте введення формул з дужками.</h1>
+            <input id="inputFormula" type="text"
+                placeholder="Введіть формулу речовини" maxlength="50">
+            <button style="cursor: pointer;" id="sendFormulaBtn">Надіслати</button>
+            <a id="moleculeLinkFormula" href="">Переглянути тут!</a>
+        </div>
+    </div>
+
+    <div class="another-variants">
+        <div class="divider">
+            <span>Інші варіанти</span>
+        </div>
+        <div class="variants-molecules" id="molecule-container">
+            <p id="empty-message" style="display: none;">Поки що немає молекул. Додайте першу!</p>
+        </div>
+
+        <div class="load">
+            <button id="load-more">Показати ще..</button>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'molecules/js/main.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block title %}ChemVisualizer | Конвертер{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'molecules/css/desktop/conveter.css' %}">
+<link rel="stylesheet" href="{% static 'molecules/css/mobile/conveter.css' %}">
+<meta name="description" content="Конвертація з sdf в stl (для 3D-друку) — ChemVisualizer">
+{% endblock %}
+
+{% block body %}
+<span id="title" style="display: none;">ChemVisualizer | Конвертер</span>
+
+<div class="convert-form">
+    <div class="converter-text">
+        <h1>Конвертер з SDF в STL</h1>
+        <p>Виберіть SDF-файл для конвертації в STL. Після конвертації ви зможете завантажити STL-файл для 3D-друку.</p>
+    </div>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="sdf_file" accept=".sdf" required>
+        <button type="submit">Конвертувати в STL</button>
+    </form>
+</div>
+
+{% endblock %}

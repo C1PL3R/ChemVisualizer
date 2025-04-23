@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+    .convert-form button{
+        margin-top: 2%;
+    }
+
+    .convert-form{
+        padding: 2%;
+    }
+
+    .convert-form h1{
+        font-size: 22px;
+    }
+
+    .convert-form p{
+        font-size: 17px;
+    }
+}
