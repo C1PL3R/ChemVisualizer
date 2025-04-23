@@ -1,13 +1,15 @@
 {% extends "template.html" %}
 {% load static %}
 
-{% block title %}ChemVisualizer | Про нас{% endblock %}
+{% block title %}ChemVisualizer | Про проєкт{% endblock %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'molecules/css/desktop/about.css' %}">
 {% endblock %}
 
 {% block body %}
 <div class="text">
+    <span id="title" style="display: none;">ChemVisualizer | Про проєкт</span>
+
     <h2 class="main_text">Опис проєкту ChemVisualizer</h2>
 
     <p><strong>ChemVisualizer</strong> — це потужний веб-інструмент для хімічних досліджень, що дозволяє

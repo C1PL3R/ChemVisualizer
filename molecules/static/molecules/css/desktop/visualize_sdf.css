@@ -1,0 +1,33 @@
+#viewer{
+    background-color: white;
+}
+
+.visualize_form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    height: auto;
+}
+
+.visualize_form h1 {
+    color: #ffffff;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.visualize_form input[type="file"] {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.visualize_form button{
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+#openFullscreenBtn{
+    scale: 0.87;
+}

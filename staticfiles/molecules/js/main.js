@@ -14,14 +14,14 @@ function getCookie(name) {
 }
 
 function setMoleculeCookies(name, smiles) {
-    const expiry = new Date();
-    expiry.setTime(expiry.getTime() + (7 * 24 * 60 * 60 * 1000));
-    const expires = `; path=/; expires=${expiry.toUTCString()}`;
-    document.cookie = `moleculeSmiles=${smiles}${expires}`;
-    document.cookie = `moleculeName=${name}${expires}`;
+	const expiry = new Date();
+	expiry.setTime(expiry.getTime() + (7 * 24 * 60 * 60 * 1000));
+	const expires = `; path=/; expires=${expiry.toUTCString()}`;
+	document.cookie = `moleculeSmiles=${smiles}${expires}`;
+	document.cookie = `moleculeName=${name}${expires}`;
 }
 
-function OpenModel(name, smiles){
+function OpenModel(name, smiles) {
 	setMoleculeCookies(name, smiles)
 
 	window.location.href = window.location.origin + '/view_molecule/'
@@ -32,35 +32,43 @@ document.getElementById("sendNameBtn").addEventListener("click", function () {
 	const loader = document.getElementById("nameLoader");
 	const loader_container = document.getElementById("loader_container");
 
-	var name = inputName.value.trim();
+	const name = inputName.value.trim();
 	if (!name) return;
 
 	loader.style.display = "inline-block";
-	loader_container.style.display = "flex"; // Показати завантаження
+	loader_container.style.display = "flex";
 
-	fetch(window.location.origin + "/send-name/", {
-		method: "POST",
+	axios.post("/send-name/", { name: name }, {
 		headers: {
-			"Content-Type": "application/json",
 			"X-CSRFToken": getCookie("csrftoken"),
-		},
-		body: JSON.stringify({ 'name': name }),
-	})
-	.then(response => response.json())
-	.then((data) => {
-		if (data.status === "success") {
-			setMoleculeCookies( data.name, data.smiles);
-			const sendBtn = document.getElementById("sendNameBtn");
-			sendBtn.style.display = 'none';
-
-			const link = document.getElementById("moleculeLinkName");
-			link.href = window.location.origin + "/view_molecule/";
-			link.style.display = "inline";
+			"Content-Type": "application/json"
 		}
 	})
-	.catch((error) => {
-		console.error("Помилка при запиті:", error.message);
-		alert("Будь ласка, введіть правильну назву або зверніться до інших ресурсів для її правильного написання!");
+	.then(res => {
+		const data = res.data;
+		if (data.status === "success") {
+			setMoleculeCookies(data.name, data.smiles);
+			document.getElementById("sendNameBtn").style.display = "none";
+
+			const link = document.getElementById("moleculeLinkName");
+			link.href = "/view_molecule/";
+			link.style.display = "inline";
+		} else {
+			Swal.fire({
+				title: 'Помилка!',
+				text: data.error || 'Щось пішло не так',
+				icon: 'error',
+				confirmButtonText: 'ОК'
+			});
+		}
+	})
+	.catch(error => {
+		Swal.fire({
+			title: 'Помилка!',
+			text: error.response?.data?.error || 'Сталася невідома помилка',
+			icon: 'error',
+			confirmButtonText: 'ОК'
+		});
 	})
 	.finally(() => {
 		loader.style.display = "none";
@@ -74,35 +82,43 @@ document.getElementById("sendFormulaBtn").addEventListener("click", function () 
 	const loader = document.getElementById("formulaLoader");
 	const loader_container = document.getElementById("loader_container");
 
-	var formula = inputFormula.value.trim();
+	const formula = inputFormula.value.trim();
 	if (!formula) return;
 
 	loader.style.display = "inline-block";
-	loader_container.style.display = "flex"; // Показати завантаження
+	loader_container.style.display = "flex";
 
-	fetch(window.location.origin + "/send-formula/", {
-		method: "POST",
+	axios.post("/send-formula/", { formula: formula }, {
 		headers: {
-			"Content-Type": "application/json",
 			"X-CSRFToken": getCookie("csrftoken"),
-		},
-		body: JSON.stringify({ 'formula': formula }),
-	})
-	.then(response => response.json())
-	.then((data) => {
-		if (data.status === "success") {
-			setMoleculeCookies(data.name, data.smiles);
-			const sendBtn = document.getElementById("sendFormulaBtn");
-			sendBtn.style.display = 'none';
-
-			const link = document.getElementById("moleculeLinkFormula");
-			link.href = window.location.origin + "/view_molecule/";
-			link.style.display = "inline";
+			"Content-Type": "application/json"
 		}
 	})
-	.catch((error) => {
-		console.error("Помилка при запиті:", error);
-		alert("Будь ласка, введіть правильну формулу або зверніться до інших ресурсів для її правильного написання!");
+	.then(res => {
+		const data = res.data;
+		if (data.status === "success") {
+			setMoleculeCookies(data.name, data.smiles);
+			document.getElementById("sendFormulaBtn").style.display = "none";
+
+			const link = document.getElementById("moleculeLinkFormula");
+			link.href = "/view_molecule/";
+			link.style.display = "inline";
+		} else {
+			Swal.fire({
+				title: 'Помилка!',
+				text: data.error || 'Щось пішло не так',
+				icon: 'error',
+				confirmButtonText: 'ОК'
+			});
+		}
+	})
+	.catch(error => {
+		Swal.fire({
+			title: 'Помилка!',
+			text: error.response?.data?.error || 'Сталася невідома помилка',
+			icon: 'error',
+			confirmButtonText: 'ОК'
+		});
 	})
 	.finally(() => {
 		loader.style.display = "none";
@@ -110,7 +126,8 @@ document.getElementById("sendFormulaBtn").addEventListener("click", function () 
 	});
 });
 
-var value = 'block';
+
+var value = 'flex';
 
 document.getElementById("nameOfSubstanceBtn").addEventListener("click", function () {
 	const nameOfSubstance = document.getElementById("nameOfSubstance");
@@ -144,61 +161,61 @@ document.getElementById("formulaOfSubstanceBtn").addEventListener("click", funct
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const container = document.getElementById("molecule-container");
-    const emptyMessage = document.getElementById("empty-message");
-    const loadMoreButton = document.getElementById("load-more");
+	const container = document.getElementById("molecule-container");
+	const emptyMessage = document.getElementById("empty-message");
+	const loadMoreButton = document.getElementById("load-more");
 
-    let allMolecules = [];
-    let currentIndex = 0;
-    const batchSize = 9;
+	let allMolecules = [];
+	let currentIndex = 0;
+	const batchSize = 9;
 
-    fetch(window.location.origin + "/api/molecule-history")
-    .then(response => response.json())
-    .then(data => {
-        if (data.length === 0) {
-            emptyMessage.style.display = "block";
-            return;
-        }
+	fetch(window.location.origin + "/api/molecule-history")
+		.then(response => response.json())
+		.then(data => {
+			if (data.length === 0) {
+				emptyMessage.style.display = "block";
+				return;
+			}
 
-        allMolecules = data;
-        loadMoreButton.style.display = "inline-block";
-        renderNextBatch();
-    });
+			allMolecules = data;
+			loadMoreButton.style.display = "inline-block";
+			renderNextBatch();
+		});
 
-    loadMoreButton.addEventListener("click", renderNextBatch);
+	loadMoreButton.addEventListener("click", renderNextBatch);
 
-    function renderNextBatch() {
-        const nextBatch = allMolecules.slice(currentIndex, currentIndex + batchSize);
+	function renderNextBatch() {
+		const nextBatch = allMolecules.slice(currentIndex, currentIndex + batchSize);
 
-        nextBatch.forEach(molecule => {
-            const elementDiv = document.createElement("div");
-            elementDiv.className = "element";
-            elementDiv.setAttribute("onclick", `OpenModel(name='${molecule.name}', smiles='${molecule.smiles}')`);
+		nextBatch.forEach(molecule => {
+			const elementDiv = document.createElement("div");
+			elementDiv.className = "element";
+			elementDiv.setAttribute("onclick", `OpenModel(name='${molecule.name}', smiles='${molecule.smiles}')`);
 
-            const nameSpan = document.createElement("span");
-            nameSpan.className = "nameOfMol";
-            nameSpan.textContent = molecule.name;
+			const nameSpan = document.createElement("span");
+			nameSpan.className = "nameOfMol";
+			nameSpan.textContent = molecule.name;
 
-            const dateSpan = document.createElement("span");
-            dateSpan.className = "date";
-            const date = new Date(molecule.created_at);
-            const formattedDate = date.toLocaleDateString("uk-UA", {
-                year: "2-digit",
-                month: "2-digit",
-                day: "2-digit"
-            }).replace(/\//g, '.');
+			const dateSpan = document.createElement("span");
+			dateSpan.className = "date";
+			const date = new Date(molecule.created_at);
+			const formattedDate = date.toLocaleDateString("uk-UA", {
+				year: "2-digit",
+				month: "2-digit",
+				day: "2-digit"
+			}).replace(/\//g, '.');
 
-            dateSpan.textContent = formattedDate;
+			dateSpan.textContent = formattedDate;
 
-            elementDiv.appendChild(nameSpan);
-            elementDiv.appendChild(dateSpan);
-            container.appendChild(elementDiv);
-        });
+			elementDiv.appendChild(nameSpan);
+			elementDiv.appendChild(dateSpan);
+			container.appendChild(elementDiv);
+		});
 
-        currentIndex += batchSize;
+		currentIndex += batchSize;
 
-        if (currentIndex >= allMolecules.length) {
-            loadMoreButton.style.display = "none";
-        }
-    }
+		if (currentIndex >= allMolecules.length) {
+			loadMoreButton.style.display = "none";
+		}
+	}
 });

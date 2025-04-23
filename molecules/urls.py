@@ -17,6 +17,8 @@ urlpatterns = [
     path('view_molecule/', views.molecule_view, name='view_molecule'),
     path('about/', views.about, name='about'),
     path('what_are_smiles/', views.what_are_smiles, name='what_are_smiles'),
+    path('converter/', views.converter_to_sdf, name='converter_to_sdf'),
+    path('visualize-sdf/', views.visualize_sdf, name='visualize_sdf'),
     path('send-formula/', views.send_formula, name='send_formula'),
     path('send-name/', views.send_name, name='send-name'),
     path('api/', include(router.urls)),

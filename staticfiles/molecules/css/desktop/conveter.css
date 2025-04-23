@@ -1,0 +1,40 @@
+.convert-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    height: auto;
+}
+
+.convert-form input[type="file"] {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.convert-form button {
+    font-size: 17px;
+}
+
+.converter-text{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.converter-text h1 {
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.converter-text p{
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5%;
+}

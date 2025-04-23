@@ -1,12 +1,14 @@
 {% extends "template.html" %}
 {% load static %}
 
-{% block title %}ChemVisualizer | 404{% endblock %}
+{% block title %}ChemVisualizer | 500{% endblock %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'molecules/css/desktop/404.css' %}">
 <meta name="description" content="Сторінка не знайдена — ChemVisualizer">
 {% endblock %}
 
 {% block body %}
-<h1>Несподівана помилка! Перейдіть на головну сторінку!</h1>
+<span id="title" style="display: none;">ChemVisualizer | 500</span>
+
+<h1>Проблема на боці сервера! Перейдіть на <a href="{% url 'index' %}">головну сторінку</a>!</h1>
 {% endblock %}

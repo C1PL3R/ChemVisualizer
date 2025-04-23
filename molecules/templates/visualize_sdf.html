@@ -1,0 +1,52 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block title %}ChemVisualizer | Візуалізація sdf-молекули{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'molecules/css/desktop/view_molecule.css' %}">
+<link rel="stylesheet" href="{% static 'molecules/css/mobile/view_molecule.css' %}">
+
+<link rel="stylesheet" href="{% static 'molecules/css/desktop/visualize_sdf.css' %}">
+<link rel="stylesheet" href="{% static 'molecules/css/mobile/visualize_sdf.css' %}">
+
+<script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+
+
+<meta name="description" content="Візуалізуй sdf-молекулу — ChemVisualizer">
+{% endblock %}
+
+{% block body %}
+<span id="title" style="display: none;">ChemVisualizer | Візуалізація sdf-молекули</span>
+
+<div class="visualize_form">
+    <h1>Виберіть молекулу у форматі SDF для перегляду в 3D"</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="sdf_file" accept=".sdf" required>
+        <button id="visualize" type="submit">Візуалізувати</button>
+    </form>
+</div>
+
+<div class="content">
+    <button id="openFullscreenBtn" onclick="openFullscreen()">Відкрити на весь екран</button>
+</div>
+<div class="viewer-container">
+    <div id="viewer">
+    </div>
+
+    <div class="controls">
+        <input type="checkbox" id="animation">
+        <span id="turn-on-off"><b>Увімкнути анімацію</b></span>
+
+        <input type="checkbox" id="show-text">
+        <span id="show-text-span"><b>Показати підписи</b></span>
+    </div>
+</div>
+
+<span id="molecule" style='display: none;'>{{ sdf_data }}</span>
+
+<script src="{% static 'molecules/js/visualize_sdf.js' %}"></script>
+{% endblock %}

@@ -24,6 +24,7 @@
     width: 100%;
     height: auto;
     display: flex;
+    justify-content: center;
 }
 
 #formulaOfSubstance,
@@ -34,16 +35,18 @@
     border-radius: 5px;
     padding: 15px;
     margin: 10px;
-    margin-left: 20%;
     border: none;
     background-color: rgba(0, 0, 0, 0.5);
     color: #000000;
     font-size: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #formulaOfSubstance input,
 #nameOfSubstance input{
-    width: 90%;
+    width: 100%;
     padding: 10px;
     border-radius: 10px;
     height: 40px;
@@ -76,7 +79,7 @@
 }
 
 #formulaOfSubstance h1{
-    width: 70%;
+    width: 100%;
     padding: 3px;
     background-color: #333383;
     color: #f9f9f9;
@@ -89,7 +92,7 @@
 #moleculeLinkFormula{
     display: none;
     text-decoration: none;
-    margin-top: 20%;
+    margin-top: 10px;
     color: #31315a;
     background-color: #a6a6d8;
     font-size: 17px;
@@ -97,6 +100,7 @@
     padding: 10px;
     border-radius: 5px;
     transition: 0.5s;
+    width: 40%;
 }
 
 #moleculeLinkName:hover,

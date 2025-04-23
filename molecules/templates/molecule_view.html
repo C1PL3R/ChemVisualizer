@@ -2,7 +2,7 @@
 {% load static %}
 {% load custom_filters %}
 
-{% block title %}ChemVisualizer | Головна сторінка{% endblock %}
+{% block title %}ChemVisualizer | {{ name }}{% endblock %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'molecules/css/desktop/view_molecule.css' %}">
 <link rel="stylesheet" href="{% static 'molecules/css/mobile/view_molecule.css' %}">
@@ -10,9 +10,13 @@
 <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+
+<meta name="description" content="Перегляд молекули в 3D — ChemVisualizer">
 {% endblock %}
 
 {% block body %}
+<span id="title" style="display: none;">ChemVisualizer | {{ name }}</span>
+
 <div class="divider">
     <span>{{name}}</span>
 </div>
@@ -35,7 +39,6 @@
         <input type="checkbox" id="show-text" >
         <span id="show-text-span"><b>Показати підписи</b></span>
     </div>
-    
 </div>
     
 <div style="margin-top: 10px;" class="divider">
@@ -47,6 +50,7 @@
         <span>Молекулярна маса: <b>{{ molecular_weight }}</b></span>
         <span>Молекулярна формула: <b>{{ molecular_formula|format_formula }}</b></span>
         <span>Точна маса: <b>{{ exact_mass }}</b></span>
+        <span>Інші назви (синоніми): <b>{{ synonyms }}</b></span>
         <span>AIDs: <b>{{ aids }}</b></span>
         <span>SIDs: <b>{{ sids }}</b></span>
         {% else %}
@@ -54,6 +58,7 @@
         <span>Молекулярна маса: <b>{{ molecular_weight }}</b></span>
         <span>Молекулярна формула: <b>{{ molecular_formula|format_formula }}</b></span>
         <span>Точна маса: <b>{{ exact_mass }}</b></span>
+        <span>Інші назви (синоніми): <b>{{ synonyms }}</b></span>
     {% endif %}
     <span class="add_info"><b>Дані взято з <a href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a></b></span>
 </div>

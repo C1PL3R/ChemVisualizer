@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 /ChemVisualizer/ChemVisualizer/static/Media/gradient-hexagonal-background
 ChemVisualizer/test.py
+test.html
+test.py
